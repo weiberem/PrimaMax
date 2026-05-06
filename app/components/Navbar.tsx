@@ -13,7 +13,7 @@ export default function Navbar() {
     { href: "#pricing", label: t.nav.pricing },
     { href: "#contact", label: t.nav.contact },
     { href: "#about", label: t.nav.about },
-    { href: "#booking", label: t.nav.booking, comingSoon: true },
+    { href: "#booking", label: t.nav.booking },
     { href: "#calculator", label: t.nav.calculator, comingSoon: true },
   ];
 
