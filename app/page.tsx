@@ -3,7 +3,6 @@ import Hero from "./components/Hero";
 import Services from "./components/Services";
 import Pricing from "./components/Pricing";
 import Contact from "./components/Contact";
-import About from "./components/About";
 import Booking from "./components/Booking";
 import PriceCalculator from "./components/PriceCalculator";
 import Footer from "./components/Footer";
@@ -19,7 +18,6 @@ export default function Home() {
         <Services />
         <Pricing />
         <Contact />
-        <About />
         <Booking />
         <PriceCalculator />
       </main>

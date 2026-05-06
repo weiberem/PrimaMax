@@ -43,11 +43,6 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="#about" className="hover:text-white">
-                {t.nav.about}
-              </a>
-            </li>
-            <li>
               <a href="#booking" className="hover:text-white">
                 {t.nav.booking}
               </a>
