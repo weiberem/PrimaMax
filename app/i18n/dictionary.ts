@@ -247,7 +247,9 @@ export const de = {
     legal: "Impressum",
     legalText: "Vollständiges Impressum folgt.",
     rights: "Alle Rechte vorbehalten.",
-    madeWith: "Erstellt mit Sorgfalt im Bödeli.",
+    madeWith: "Erstellt mit Sorgfalt auf dem Bödeli.",
+    credit: "Design & Code",
+    creditBrand: "RW WebSolutions",
   },
 };
 
@@ -495,7 +497,9 @@ export const en: Dict = {
     legal: "Legal notice",
     legalText: "Full legal notice to follow.",
     rights: "All rights reserved.",
-    madeWith: "Made with care in the Bödeli.",
+    madeWith: "Made with care on the Bödeli.",
+    credit: "Design & Code",
+    creditBrand: "RW WebSolutions",
   },
 };
 
