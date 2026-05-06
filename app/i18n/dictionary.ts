@@ -105,48 +105,160 @@ export const de = {
   pricing: {
     title: "Transparente Preise",
     subtitle:
-      "Faire Konditionen, keine versteckten Kosten. Alle Preise verstehen sich inklusive Anfahrt im Bödeli. Einsätze ausserhalb des Bödelis auf Anfrage.",
-    headers: { service: "Leistung", price: "Preis", min: "Mindestdauer" },
+      "Faire Konditionen, keine versteckten Kosten. Stundensätze inklusive Material wie Reinigungstücher und Grundprodukte.",
+    priceLabel: "Preis",
+    minLabel: "Mindestdauer",
+    includesLabel: "Im Stundensatz enthalten",
+    pickupLabel: "Abholservice",
     comingSoon: "Bald verfügbar",
-    rows: [
-      { service: "Reinigung", price: "ab CHF 45/h", min: "min. 2 h" },
+    items: [
+      {
+        service: "Reinigung",
+        shortDesc:
+          "Wohnungs-, Haus- und Büroreinigung mit Auge fürs Detail.",
+        includes: [
+          "Staubsaugen, Wischen, Staubwischen",
+          "Küche: Arbeitsflächen, Spüle, Fronten",
+          "Bad & WC: Sanitär, Fugen, Spiegel",
+          "Mülleimer leeren, Oberflächen desinfizieren",
+        ],
+        price: "ab CHF 45/h",
+        min: "min. 2 h",
+      },
+      {
+        service: "Endreinigung mit Abnahmegarantie",
+        shortDesc:
+          "Komplette Wohnungsübergabe – sauber bis in die Ecken, Abnahme garantiert.",
+        includes: [
+          "Tiefenreinigung Küche inkl. Backofen, Kühlschrank",
+          "Bad: Kalkentfernung, Fugen, Armaturen",
+          "Fenster innen + Rahmen + Storen",
+          "Böden, Wände, Heizkörper, Lüftungsgitter",
+          "Nachbesserung kostenlos bei Beanstandung",
+        ],
+        price: "Pauschale auf Anfrage",
+        min: "nach Objekt",
+      },
       {
         service: "Airbnb / Ferienwohnung Wechselreinigung",
+        shortDesc:
+          "Hotelstandard zwischen Gästewechseln – frisch, schnell, zuverlässig.",
+        includes: [
+          "Komplettreinigung der Wohnung",
+          "Bettwäsche & Handtücher wechseln",
+          "Küche & Bad sanitärrein",
+          "Mülltrennung & Auffüllen Verbrauchsmaterial",
+          "Foto-Check für Vermieter:in auf Wunsch",
+        ],
         price: "ab CHF 50/h",
         min: "Pauschale auf Anfrage",
       },
-      { service: "Haushaltshilfe", price: "ab CHF 40/h", min: "min. 2 h" },
+      {
+        service: "Haushaltshilfe",
+        shortDesc:
+          "Entlastung im Alltag – wir kümmern uns um das Drumherum.",
+        includes: [
+          "Wäsche waschen, aufhängen, zusammenlegen",
+          "Bügeln & einfache Näharbeiten",
+          "Einkaufen & Besorgungen im Bödeli",
+          "Aufräumen & Ordnung halten",
+          "Pflanzen giessen während Abwesenheit",
+        ],
+        price: "ab CHF 40/h",
+        min: "min. 2 h",
+      },
       {
         service: "Nähservice (einfach)",
+        shortDesc:
+          "Reparaturen, Änderungen und kleine Neuanfertigungen.",
+        includes: [
+          "Hosen & Röcke kürzen",
+          "Reissverschluss ersetzen",
+          "Knöpfe annähen, Risse flicken",
+          "Vorhänge & Tischtücher",
+        ],
         price: "ab CHF 35/h",
         min: "min. 1 h",
+        pickup: "Kostenloser Abholservice im Bödeli",
       },
       {
         service: "Nähservice (Outdoor / Spezial)",
+        shortDesc:
+          "Gore-Tex, Daunen, technische Stoffe – mit dem richtigen Material und Know-how.",
+        includes: [
+          "Gore-Tex-Reparatur mit Spezialband",
+          "Daunenjacken & Schlafsäcke",
+          "Outdoorhosen, Gamaschen, Rucksäcke",
+          "Spezialnähte & Verstärkungen",
+        ],
         price: "ab CHF 45/h",
         min: "min. 1 h",
+        pickup: "Kostenloser Abholservice im Bödeli",
       },
       {
         service: "Gartenarbeit / Umgebung",
+        shortDesc:
+          "Rund ums Haus und im Garten – saubere und gepflegte Umgebung.",
+        includes: [
+          "Rasenmähen & Rasenkanten",
+          "Hecken schneiden",
+          "Unkraut jäten, Beete pflegen",
+          "Laubentfernung",
+        ],
         price: "ab CHF 50/h",
         min: "min. 2 h",
         comingSoon: true as const,
       },
       {
         service: "Malerarbeiten",
+        shortDesc: "Frische Farbe für innen – sauber abgedeckt und sauber gefinisht.",
+        includes: [
+          "Wände streichen / Tapezieren",
+          "Decken weissen",
+          "Türen & Rahmen",
+          "Vorbereitung & Schutz der Möbel",
+        ],
         price: "ab CHF 55/h",
         min: "min. 3 h",
         comingSoon: true as const,
       },
       {
         service: "Treppenhausreinigung",
+        shortDesc: "Regelmässige oder einmalige Reinigung von Treppenhäusern.",
+        includes: [
+          "Treppenstufen & Geländer",
+          "Eingangsbereich & Briefkästen",
+          "Lift & Tasten desinfizieren",
+          "Fenster im Treppenhaus",
+        ],
         price: "Pauschale nach Objekt",
-        min: "—",
+        min: "nach Objekt",
         comingSoon: true as const,
       },
     ],
-    footnote:
-      "Anfahrt innerhalb des Bödelis (Interlaken, Matten, Unterseen, Wilderswil, Bönigen, Ringgenberg) inklusive. Ausserhalb auf Anfrage.",
+    travelTitle: "Anfahrt – fair und transparent",
+    travelRules: [
+      {
+        label: "Im Bödeli, Mindestdauer eingehalten",
+        value: "Anfahrt inklusive",
+        positive: true as const,
+      },
+      {
+        label: "Im Bödeli, kürzer als Mindestdauer",
+        value: "CHF 40 Anfahrtspauschale",
+      },
+      {
+        label: "Ausserhalb Bödeli",
+        value: "CHF 0.70/km (Hin- und Rückweg)",
+      },
+      {
+        label: "Nähservice",
+        value: "Kostenloser Abholservice im Bödeli",
+        positive: true as const,
+      },
+    ],
+    travelNote:
+      "Bödeli umfasst: Interlaken, Matten, Unterseen, Wilderswil, Bönigen, Ringgenberg. Der Kilometeransatz von CHF 0.70 entspricht dem offiziellen Schweizer Spesenansatz.",
   },
   calculator: {
     title: "KI-Preisrechner",
@@ -154,44 +266,89 @@ export const de = {
     betaNote:
       "Wir testen den Preisrechner gerade. Die Schätzung dient als Orientierung – das verbindliche Angebot machen wir nach Rücksprache.",
     subtitle:
-      "Beschreiben Sie kurz, was Sie brauchen – wir schätzen Ihnen unverbindlich eine Preisspanne. Schnell, einfach und transparent.",
-    descriptionLabel: "Was brauchen Sie?",
-    descriptionPlaceholder:
-      "z.B. Endreinigung 3.5-Zimmer-Wohnung in Matten, mit Backofen und Fenstern …",
-    servicesLabel: "Leistungen",
-    services: [
-      "Reinigung",
-      "Endreinigung",
-      "Airbnb / Ferienwohnung",
-      "Haushaltshilfe",
-      "Bügeln / Wäsche",
-      "Nähservice (einfach)",
-      "Nähservice (Outdoor)",
-    ],
-    areaLabel: "Fläche (m²)",
-    roomsLabel: "Anzahl Räume / Zimmer",
+      "Wählen Sie die gewünschte Leistung – wir fragen nur nach was wirklich relevant ist und schätzen Ihnen unverbindlich eine Preisspanne.",
+    categoryLabel: "Was möchten Sie?",
+    categories: {
+      cleaning: "Reinigung",
+      household: "Haushaltshilfe & Wäsche",
+      sewing: "Nähservice",
+    },
+    cleaning: {
+      variantLabel: "Art der Reinigung",
+      variants: {
+        unterhalt: "Unterhaltsreinigung",
+        end: "Endreinigung / Umzug",
+        airbnb: "Airbnb / Ferienwohnung",
+      },
+      areaLabel: "Fläche (m²)",
+      areaPlaceholder: "z.B. 85",
+      roomsLabel: "Räume / Zimmer",
+      roomsPlaceholder: "z.B. 3.5",
+      extrasLabel: "Zusätzlich",
+      extras: ["Backofen", "Kühlschrank", "Fenster innen", "Storen / Lamellen"],
+      bedsLabel: "Anzahl Betten",
+    },
+    household: {
+      variantLabel: "Art der Hilfe",
+      variants: {
+        umfassend: "Haushaltshilfe (umfassend)",
+        buegeln: "Nur Bügeln & Wäsche",
+      },
+      tasksLabel: "Aufgaben",
+      tasks: ["Einkaufen", "Wäsche waschen", "Bügeln", "Aufräumen", "Pflanzen giessen"],
+      hoursLabel: "Stunden pro Einsatz",
+      shirtsLabel: "Hemden / Blusen",
+      pantsLabel: "Hosen / Röcke",
+      beddingLabel: "Bettwäsche-Sets",
+    },
+    sewing: {
+      variantLabel: "Art",
+      variants: {
+        einfach: "Einfache Reparatur / Änderung",
+        outdoor: "Outdoor / Spezial",
+      },
+      tasksLabel: "Was zu nähen?",
+      tasksEinfach: [
+        "Hose kürzen",
+        "Reissverschluss ersetzen",
+        "Knopf annähen",
+        "Riss flicken",
+        "Vorhang ändern",
+        "Anderes",
+      ],
+      tasksOutdoor: [
+        "Gore-Tex Reparatur",
+        "Daunenjacke",
+        "Outdoorhose",
+        "Schlafsack",
+        "Spezialnaht / Verstärkung",
+        "Anderes",
+      ],
+      countLabel: "Anzahl Stücke",
+      materialLabel: "Material (falls bekannt)",
+      materials: ["Gore-Tex", "Daunen", "Polyester / Nylon", "Anderes / Unsicher"],
+      pickupNote: "Mit kostenlosem Abholservice im Bödeli.",
+    },
     frequencyLabel: "Häufigkeit",
     frequencies: [
       { value: "einmalig", label: "Einmalig" },
       { value: "woechentlich", label: "Wöchentlich" },
+      { value: "alle_2_wochen", label: "Alle 2 Wochen" },
       { value: "monatlich", label: "Monatlich" },
     ],
+    descriptionLabel: "Weitere Details (optional)",
+    descriptionPlaceholder:
+      "z.B. Zugangsdetails, Wünsche, gewünschter Termin …",
     submit: "Preis schätzen lassen",
     submitting: "Berechne …",
     resultLabel: "Ergebnis",
     resultEmpty:
-      "Füllen Sie das Formular aus, um eine unverbindliche Preisspanne zu erhalten.",
+      "Füllen Sie die Angaben aus, um eine unverbindliche Preisspanne zu erhalten.",
     calculating: "Berechne Ihre Schätzung …",
     disclaimer:
       "⚠️ Dies ist ein automatisch generierter Schätzpreis. Die tatsächlichen Kosten können abweichen. Bitte kontaktieren Sie uns für ein verbindliches Angebot.",
     whatsappCta: "Jetzt anfragen via WhatsApp",
-    whatsappIntro:
-      "Hallo PrimaMax, ich interessiere mich für eine Offerte.",
-    serviceSummaryPrefix: "Leistungen",
-    areaSummaryPrefix: "Fläche",
-    roomsSummaryPrefix: "Räume",
-    frequencySummaryPrefix: "Häufigkeit",
-    detailsSummaryPrefix: "Details",
+    whatsappIntro: "Hallo PrimaMax, ich interessiere mich für eine Offerte.",
     estimateSummaryPrefix: "Generierte Schätzung",
   },
   booking: {
@@ -384,48 +541,159 @@ export const en: Dict = {
   pricing: {
     title: "Transparent prices",
     subtitle:
-      "Fair conditions, no hidden costs. All prices include travel within the Bödeli. Assignments outside the Bödeli on request.",
-    headers: { service: "Service", price: "Price", min: "Minimum duration" },
+      "Fair conditions, no hidden costs. Hourly rates include materials such as cleaning cloths and basic products.",
+    priceLabel: "Price",
+    minLabel: "Minimum duration",
+    includesLabel: "Included in the hourly rate",
+    pickupLabel: "Pickup service",
     comingSoon: "Coming soon",
-    rows: [
-      { service: "Cleaning", price: "from CHF 45/h", min: "min. 2 h" },
+    items: [
+      {
+        service: "Cleaning",
+        shortDesc:
+          "Apartment, house and office cleaning with attention to detail.",
+        includes: [
+          "Vacuuming, mopping, dusting",
+          "Kitchen: counters, sink, cabinet fronts",
+          "Bath & WC: sanitary, grout, mirrors",
+          "Empty bins, disinfect surfaces",
+        ],
+        price: "from CHF 45/h",
+        min: "min. 2 h",
+      },
+      {
+        service: "Move-out cleaning with handover guarantee",
+        shortDesc:
+          "Complete handover-ready cleaning – clean to the corners, handover guaranteed.",
+        includes: [
+          "Deep clean of kitchen incl. oven, fridge",
+          "Bathroom: limescale, grout, fittings",
+          "Windows inside + frames + blinds",
+          "Floors, walls, radiators, vents",
+          "Free re-clean if landlord complains",
+        ],
+        price: "Flat rate on request",
+        min: "depends on property",
+      },
       {
         service: "Airbnb / holiday flat turnover cleaning",
+        shortDesc:
+          "Hotel standard between guest changeovers – fresh, fast, reliable.",
+        includes: [
+          "Full apartment cleaning",
+          "Change bed linens & towels",
+          "Sanitary-clean kitchen & bathroom",
+          "Waste sorting & restocking consumables",
+          "Photo-check for the host on request",
+        ],
         price: "from CHF 50/h",
         min: "Flat rate on request",
       },
-      { service: "Household help", price: "from CHF 40/h", min: "min. 2 h" },
+      {
+        service: "Household help",
+        shortDesc: "Daily relief – we take care of the surrounding tasks.",
+        includes: [
+          "Laundry: wash, hang, fold",
+          "Ironing & simple sewing",
+          "Shopping & errands within the Bödeli",
+          "Tidying & keeping order",
+          "Plant watering during your absence",
+        ],
+        price: "from CHF 40/h",
+        min: "min. 2 h",
+      },
       {
         service: "Sewing service (basic)",
+        shortDesc:
+          "Repairs, alterations and small custom items.",
+        includes: [
+          "Shorten trousers & skirts",
+          "Replace zippers",
+          "Sew on buttons, mend tears",
+          "Curtains & tablecloths",
+        ],
         price: "from CHF 35/h",
         min: "min. 1 h",
+        pickup: "Free pickup service within the Bödeli",
       },
       {
         service: "Sewing service (outdoor / specialty)",
+        shortDesc:
+          "Gore-Tex, down, technical fabrics – with the right materials and know-how.",
+        includes: [
+          "Gore-Tex repair with seam tape",
+          "Down jackets & sleeping bags",
+          "Outdoor trousers, gaiters, backpacks",
+          "Specialty seams & reinforcements",
+        ],
         price: "from CHF 45/h",
         min: "min. 1 h",
+        pickup: "Free pickup service within the Bödeli",
       },
       {
         service: "Garden / surroundings",
+        shortDesc: "Around the house and garden – clean and well-kept.",
+        includes: [
+          "Lawn mowing & edges",
+          "Hedge trimming",
+          "Weeding, flowerbed care",
+          "Leaf removal",
+        ],
         price: "from CHF 50/h",
         min: "min. 2 h",
         comingSoon: true as const,
       },
       {
         service: "Painting work",
+        shortDesc:
+          "Fresh paint indoors – properly covered and properly finished.",
+        includes: [
+          "Wall painting / wallpapering",
+          "Whitening ceilings",
+          "Doors & frames",
+          "Preparation & furniture protection",
+        ],
         price: "from CHF 55/h",
         min: "min. 3 h",
         comingSoon: true as const,
       },
       {
         service: "Stairwell cleaning",
+        shortDesc: "Regular or one-off cleaning of stairwells.",
+        includes: [
+          "Stairs & railings",
+          "Entrance & mailboxes",
+          "Lift & buttons disinfected",
+          "Stairwell windows",
+        ],
         price: "Flat rate per property",
-        min: "—",
+        min: "depends on property",
         comingSoon: true as const,
       },
     ],
-    footnote:
-      "Travel within the Bödeli (Interlaken, Matten, Unterseen, Wilderswil, Bönigen, Ringgenberg) is included. Outside on request.",
+    travelTitle: "Travel – fair and transparent",
+    travelRules: [
+      {
+        label: "Within the Bödeli, minimum duration met",
+        value: "Travel included",
+        positive: true as const,
+      },
+      {
+        label: "Within the Bödeli, less than minimum",
+        value: "CHF 40 travel flat rate",
+      },
+      {
+        label: "Outside the Bödeli",
+        value: "CHF 0.70/km (round trip)",
+      },
+      {
+        label: "Sewing service",
+        value: "Free pickup service within the Bödeli",
+        positive: true as const,
+      },
+    ],
+    travelNote:
+      "Bödeli covers: Interlaken, Matten, Unterseen, Wilderswil, Bönigen, Ringgenberg. The CHF 0.70/km rate matches the official Swiss expense rate.",
   },
   calculator: {
     title: "AI price calculator",
@@ -433,43 +701,88 @@ export const en: Dict = {
     betaNote:
       "We're currently testing the price calculator. The estimate serves as a rough orientation – we'll send a binding offer after a quick chat.",
     subtitle:
-      "Briefly describe what you need – we'll give you a non-binding price range. Fast, simple and transparent.",
-    descriptionLabel: "What do you need?",
-    descriptionPlaceholder:
-      "e.g. move-out cleaning of a 3.5-room apartment in Matten, with oven and windows …",
-    servicesLabel: "Services",
-    services: [
-      "Cleaning",
-      "Move-out cleaning",
-      "Airbnb / holiday flat",
-      "Household help",
-      "Ironing / laundry",
-      "Sewing service (basic)",
-      "Sewing service (outdoor)",
-    ],
-    areaLabel: "Area (m²)",
-    roomsLabel: "Number of rooms",
+      "Pick the service you need – we only ask what's relevant and give you a non-binding price range.",
+    categoryLabel: "What do you need?",
+    categories: {
+      cleaning: "Cleaning",
+      household: "Household & laundry",
+      sewing: "Sewing service",
+    },
+    cleaning: {
+      variantLabel: "Type of cleaning",
+      variants: {
+        unterhalt: "Maintenance cleaning",
+        end: "Move-out / move-in cleaning",
+        airbnb: "Airbnb / holiday flat",
+      },
+      areaLabel: "Area (m²)",
+      areaPlaceholder: "e.g. 85",
+      roomsLabel: "Rooms",
+      roomsPlaceholder: "e.g. 3.5",
+      extrasLabel: "Additional",
+      extras: ["Oven", "Fridge", "Windows inside", "Blinds / shutters"],
+      bedsLabel: "Number of beds",
+    },
+    household: {
+      variantLabel: "Type of help",
+      variants: {
+        umfassend: "Household help (full)",
+        buegeln: "Ironing & laundry only",
+      },
+      tasksLabel: "Tasks",
+      tasks: ["Shopping", "Laundry wash", "Ironing", "Tidying", "Plant watering"],
+      hoursLabel: "Hours per visit",
+      shirtsLabel: "Shirts / blouses",
+      pantsLabel: "Trousers / skirts",
+      beddingLabel: "Bedding sets",
+    },
+    sewing: {
+      variantLabel: "Type",
+      variants: {
+        einfach: "Basic repair / alteration",
+        outdoor: "Outdoor / specialty",
+      },
+      tasksLabel: "What needs sewing?",
+      tasksEinfach: [
+        "Shorten trousers",
+        "Replace zipper",
+        "Sew on buttons",
+        "Mend tears",
+        "Adjust curtain",
+        "Other",
+      ],
+      tasksOutdoor: [
+        "Gore-Tex repair",
+        "Down jacket",
+        "Outdoor trousers",
+        "Sleeping bag",
+        "Specialty seam / reinforcement",
+        "Other",
+      ],
+      countLabel: "Number of pieces",
+      materialLabel: "Material (if known)",
+      materials: ["Gore-Tex", "Down", "Polyester / nylon", "Other / not sure"],
+      pickupNote: "Includes free pickup service within the Bödeli.",
+    },
     frequencyLabel: "Frequency",
     frequencies: [
       { value: "einmalig", label: "One-off" },
       { value: "woechentlich", label: "Weekly" },
+      { value: "alle_2_wochen", label: "Every 2 weeks" },
       { value: "monatlich", label: "Monthly" },
     ],
+    descriptionLabel: "Other details (optional)",
+    descriptionPlaceholder:
+      "e.g. access details, preferences, preferred date …",
     submit: "Get price estimate",
     submitting: "Calculating …",
     resultLabel: "Result",
-    resultEmpty:
-      "Fill in the form to get a non-binding price range.",
+    resultEmpty: "Fill in the details to get a non-binding price range.",
     calculating: "Calculating your estimate …",
     disclaimer:
       "⚠️ This is an automatically generated estimate. Actual costs may vary. Please contact us for a binding offer.",
     whatsappCta: "Inquire now via WhatsApp",
     whatsappIntro: "Hello PrimaMax, I'm interested in a quote.",
-    serviceSummaryPrefix: "Services",
-    areaSummaryPrefix: "Area",
-    roomsSummaryPrefix: "Rooms",
-    frequencySummaryPrefix: "Frequency",
-    detailsSummaryPrefix: "Details",
     estimateSummaryPrefix: "Generated estimate",
   },
   booking: {

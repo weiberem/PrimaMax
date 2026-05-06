@@ -1,2 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /rechnung
+
+Sitemap: https://primamax.ch/sitemap.xml
