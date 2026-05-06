@@ -1,9 +1,20 @@
 "use client";
 
 import { useLang } from "../i18n/LanguageProvider";
+import {
+  WHATSAPP_PHONE_PLACEHOLDER,
+  buildWhatsAppLink,
+} from "./WhatsAppButton";
 
 export default function Hero() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
+  const callHref = `tel:${WHATSAPP_PHONE_PLACEHOLDER.replace(/\s/g, "")}`;
+  const waHref = buildWhatsAppLink(
+    WHATSAPP_PHONE_PLACEHOLDER,
+    lang === "de"
+      ? "Hallo PrimaMax, ich hätte eine Anfrage."
+      : "Hello PrimaMax, I have a request."
+  );
   return (
     <section
       id="top"
@@ -33,8 +44,26 @@ export default function Hero() {
               {t.hero.ctaPrimary}
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
             </a>
-            <a href="#calculator" className="btn-secondary">
-              {t.hero.ctaSecondary}
+            <a
+              href={waHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-whatsapp"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                <path d="M19.05 4.91A10 10 0 0 0 4.1 18.36L3 22l3.74-1.07A10 10 0 1 0 19.05 4.9z" />
+              </svg>
+              WhatsApp
+            </a>
+            <a
+              href={callHref}
+              className="btn-secondary"
+              aria-label={lang === "de" ? "Anrufen" : "Call"}
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                <path d="M22 16.92V21a1 1 0 0 1-1.11 1A19 19 0 0 1 2 4.11 1 1 0 0 1 3 3h4.09a1 1 0 0 1 1 .75l1 4a1 1 0 0 1-.27 1L7.21 10.79a16 16 0 0 0 6 6l2-2.55a1 1 0 0 1 1-.27l4 1a1 1 0 0 1 .79 1z" />
+              </svg>
+              {lang === "de" ? "Anrufen" : "Call"}
             </a>
           </div>
 

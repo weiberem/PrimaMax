@@ -10,6 +10,7 @@ export const de = {
     about: "Über uns",
     booking: "Buchung",
     calculator: "Preisrechner",
+    faq: "FAQ",
     cta: "Anfragen",
     comingSoon: "bald",
     beta: "Beta",
@@ -391,6 +392,79 @@ export const de = {
     selectedSummary: "Ihr Wunschtermin",
     minDateNote: "Online-Buchung ab frühestens 24 Stunden im Voraus möglich.",
   },
+  trust: {
+    items: [
+      {
+        title: "Lokal verwurzelt",
+        body: "Wir leben und arbeiten auf dem Bödeli – mit Anfahrt aus Matten direkt zu Ihnen.",
+        icon: "📍",
+      },
+      {
+        title: "Versichert & vertrauenswürdig",
+        body: "Diskreter Umgang mit Schlüsseln und privaten Räumen, fairer Umgang mit unseren Kundinnen und Kunden.",
+        icon: "🔒",
+      },
+      {
+        title: "Abnahmegarantie",
+        body: "Bei Endreinigungen kommen wir kostenlos nochmals vorbei, falls die Verwaltung nicht zufrieden ist.",
+        icon: "✅",
+      },
+      {
+        title: "Faire, transparente Preise",
+        body: "Stundensätze ab CHF 35/h. Anfahrt im Bödeli inklusive – ohne versteckte Kosten.",
+        icon: "💰",
+      },
+      {
+        title: "Schnelle Antwort",
+        body: "Anfragen beantworten wir in der Regel innert weniger Stunden – meist schon am gleichen Tag.",
+        icon: "⚡",
+      },
+      {
+        title: "Persönlicher Kontakt",
+        body: "Sie sprechen direkt mit uns – nicht mit einem Call-Center. Per Telefon, WhatsApp oder Formular.",
+        icon: "💬",
+      },
+    ],
+  },
+  faq: {
+    title: "Häufige Fragen",
+    subtitle:
+      "Antworten auf die häufigsten Fragen rund um unsere Leistungen auf dem Bödeli.",
+    items: [
+      {
+        q: "Wie schnell kann ich einen Termin bekommen?",
+        a: "Für die meisten Aufträge können wir innerhalb von 1–3 Tagen kommen. Bei kurzfristigen Anliegen rufen Sie uns am besten direkt an oder schreiben uns auf WhatsApp – wir versuchen, eine Lösung zu finden.",
+      },
+      {
+        q: "Was kostet eine Endreinigung mit Abnahmegarantie?",
+        a: "Endreinigungen rechnen wir nach Aufwand pauschal ab. Eine 3.5-Zimmer-Wohnung im Bödeli liegt typischerweise bei CHF 400–600 inkl. Backofen, Fenster und Storen. Ein verbindliches Angebot machen wir nach kurzer Besichtigung oder nach Ihren Angaben.",
+      },
+      {
+        q: "Kommt die Anfahrt extra dazu?",
+        a: "Auf dem Bödeli (Interlaken, Matten, Unterseen, Wilderswil, Bönigen, Ringgenberg) ist die Anfahrt inklusive, sofern die Mindestdauer eingehalten wird. Bei kürzeren Einsätzen verrechnen wir CHF 40 Anfahrtspauschale, ausserhalb des Bödelis CHF 0.70/km gemäss Schweizer Spesenansatz.",
+      },
+      {
+        q: "Bringen Sie Reinigungsmaterial mit?",
+        a: "Ja, im Stundensatz sind übliche Reinigungstücher und Grundprodukte enthalten. Falls Sie eigene Produkte bevorzugen (z.B. wegen Allergien), verwenden wir gerne diese.",
+      },
+      {
+        q: "Wie funktioniert der Nähservice mit Abholung?",
+        a: "Wir holen das Stück bei Ihnen im Bödeli kostenlos ab, reparieren oder ändern es und bringen es Ihnen wieder vorbei. Auch Outdoor-Reparaturen wie Gore-Tex, Daunenjacken oder Schlafsäcke übernehmen wir.",
+      },
+      {
+        q: "Kann ich eine regelmässige Reinigung buchen?",
+        a: "Ja – wöchentlich, alle zwei Wochen oder monatlich. Bei regelmässigen Einsätzen gibt es feste Termine und wir kennen Ihre Wünsche.",
+      },
+      {
+        q: "Reinigen Sie auch Ferienwohnungen / Airbnb?",
+        a: "Sehr gerne. Wechselreinigung zwischen Gästen, frische Bettwäsche, Hotelstandard – auch kurzfristig. Wir arbeiten mit mehreren Vermietern auf dem Bödeli zusammen.",
+      },
+      {
+        q: "Wie kann ich bezahlen?",
+        a: "Sie erhalten von uns eine Rechnung mit IBAN und QR-Rechnung zur Banküberweisung. Zahlungsfrist sind 30 Tage.",
+      },
+    ],
+  },
   contact: {
     title: "Kontakt",
     subtitle:
@@ -520,6 +594,7 @@ export const en: Dict = {
     about: "About us",
     booking: "Booking",
     calculator: "Price calculator",
+    faq: "FAQ",
     cta: "Inquire",
     comingSoon: "soon",
     beta: "Beta",
@@ -899,6 +974,79 @@ export const en: Dict = {
       "Tip: For short-notice requests, please reach us directly by phone or WhatsApp – we'll get back right away.",
     selectedSummary: "Your selected appointment",
     minDateNote: "Online booking is possible from 24 hours in advance.",
+  },
+  trust: {
+    items: [
+      {
+        title: "Locally rooted",
+        body: "We live and work in the Bödeli – traveling from Matten directly to you.",
+        icon: "📍",
+      },
+      {
+        title: "Insured & trustworthy",
+        body: "Discreet handling of keys and private spaces, fair treatment of our customers.",
+        icon: "🔒",
+      },
+      {
+        title: "Handover guarantee",
+        body: "For move-out cleaning we'll come back free of charge if the property manager isn't satisfied.",
+        icon: "✅",
+      },
+      {
+        title: "Fair, transparent prices",
+        body: "Hourly rates from CHF 35/h. Travel within the Bödeli included – no hidden costs.",
+        icon: "💰",
+      },
+      {
+        title: "Fast response",
+        body: "We usually respond to inquiries within a few hours – often the same day.",
+        icon: "⚡",
+      },
+      {
+        title: "Personal contact",
+        body: "You speak directly with us – not a call center. By phone, WhatsApp or form.",
+        icon: "💬",
+      },
+    ],
+  },
+  faq: {
+    title: "Frequently asked questions",
+    subtitle:
+      "Answers to the most common questions about our services in the Bödeli.",
+    items: [
+      {
+        q: "How quickly can I get an appointment?",
+        a: "For most assignments we can come within 1–3 days. For short-notice requests please call or message us on WhatsApp directly – we'll try to find a solution.",
+      },
+      {
+        q: "How much does a move-out cleaning with handover guarantee cost?",
+        a: "We charge move-out cleanings as a flat rate based on effort. A 3.5-room apartment in the Bödeli typically costs CHF 400–600 including oven, windows and blinds. We'll provide a binding offer after a brief visit or based on your details.",
+      },
+      {
+        q: "Is travel charged extra?",
+        a: "Within the Bödeli (Interlaken, Matten, Unterseen, Wilderswil, Bönigen, Ringgenberg), travel is included as long as the minimum duration is met. For shorter visits we charge a CHF 40 flat rate, outside the Bödeli CHF 0.70/km according to the Swiss expense rate.",
+      },
+      {
+        q: "Do you bring cleaning supplies?",
+        a: "Yes, the hourly rate includes standard cleaning cloths and basic products. If you prefer your own products (e.g. for allergies), we'll happily use those.",
+      },
+      {
+        q: "How does the sewing pickup service work?",
+        a: "We pick up the item from your address in the Bödeli free of charge, repair or alter it, and bring it back to you. We also handle outdoor repairs like Gore-Tex, down jackets or sleeping bags.",
+      },
+      {
+        q: "Can I book a recurring cleaning?",
+        a: "Yes – weekly, every two weeks, or monthly. With recurring assignments we set fixed slots and learn your preferences.",
+      },
+      {
+        q: "Do you also clean holiday flats / Airbnb?",
+        a: "Absolutely. Turnover cleaning between guests, fresh linens, hotel standard – also at short notice. We work with several hosts in the Bödeli.",
+      },
+      {
+        q: "How can I pay?",
+        a: "You'll receive an invoice with IBAN and QR-bill for bank transfer. Payment term is 30 days.",
+      },
+    ],
   },
   contact: {
     title: "Contact",

@@ -16,6 +16,7 @@ export default function Navbar() {
   }[] = [
     { href: "#services", label: t.nav.services },
     { href: "#pricing", label: t.nav.pricing },
+    { href: "#faq", label: t.nav.faq },
     { href: "#contact", label: t.nav.contact },
     { href: "#booking", label: t.nav.booking },
     { href: "#calculator", label: t.nav.calculator, beta: true },

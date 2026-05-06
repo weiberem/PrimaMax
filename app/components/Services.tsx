@@ -5,8 +5,9 @@ import { useLang } from "../i18n/LanguageProvider";
 const EMOJIS = ["🧽", "🏠", "🧺", "🪡", "🌱"];
 
 export default function Services() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const services = t.services.items;
+  const ctaLabel = lang === "de" ? "Anfragen →" : "Inquire →";
   return (
     <section id="services" className="section bg-white">
       <div className="container-x">
@@ -15,9 +16,9 @@ export default function Services() {
           <p className="section-subtitle">{t.services.subtitle}</p>
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        <div className="mt-12 grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {services.map((s, idx) => (
-            <article key={s.title} className="reveal card flex flex-col">
+            <article key={s.title} className="reveal card flex h-full flex-col">
               <div className="flex items-start justify-between">
                 <div className="text-4xl">{EMOJIS[idx] ?? "✨"}</div>
                 {"comingSoon" in s && s.comingSoon && (
@@ -38,6 +39,12 @@ export default function Services() {
                   </li>
                 ))}
               </ul>
+              <a
+                href={`#contact?service=${encodeURIComponent(s.title)}`}
+                className="mt-4 inline-flex items-center gap-1 self-start text-sm font-medium text-primary-700 hover:text-primary-800"
+              >
+                {ctaLabel}
+              </a>
             </article>
           ))}
         </div>

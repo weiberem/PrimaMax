@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import WhatsAppButton, { WHATSAPP_PHONE_PLACEHOLDER } from "./WhatsAppButton";
 import { useLang } from "../i18n/LanguageProvider";
 
@@ -14,6 +14,35 @@ export default function Contact() {
   const { t } = useLang();
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  // Preselect service from hash (#contact?service=...)
+  useEffect(() => {
+    function applyHash() {
+      const hash = window.location.hash;
+      if (!hash.startsWith("#contact")) return;
+      const q = hash.split("?")[1];
+      if (!q) return;
+      const params = new URLSearchParams(q);
+      const svc = params.get("service");
+      if (!svc || !formRef.current) return;
+      const select = formRef.current.querySelector<HTMLSelectElement>(
+        'select[name="service"]'
+      );
+      if (select && Array.from(select.options).some((o) => o.value === svc)) {
+        select.value = svc;
+      }
+      const message = formRef.current.querySelector<HTMLTextAreaElement>(
+        'textarea[name="message"]'
+      );
+      if (message && !message.value) {
+        message.focus();
+      }
+    }
+    applyHash();
+    window.addEventListener("hashchange", applyHash);
+    return () => window.removeEventListener("hashchange", applyHash);
+  }, []);
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -52,6 +81,7 @@ export default function Contact() {
 
         <div className="mt-10 grid gap-8 lg:grid-cols-5 items-start">
           <form
+            ref={formRef}
             onSubmit={onSubmit}
             className="reveal lg:col-span-3 rounded-2xl bg-white p-6 sm:p-8 shadow-sm border border-slate-200 space-y-5"
           >
