@@ -31,16 +31,21 @@ export default function Pricing() {
           <p className="section-subtitle">{t.pricing.subtitle}</p>
         </div>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {t.pricing.items.map((item, idx) => {
             const icon = ICONS[idx] ?? ICONS[0];
             return (
               <article
                 key={item.service}
-                className="reveal flex flex-col rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:shadow-md"
+                className="reveal relative flex h-full flex-col rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:shadow-md"
               >
-                <div className="p-5 sm:p-6">
-                  <div className="flex items-start gap-3">
+                {"comingSoon" in item && item.comingSoon && (
+                  <span className="absolute right-4 top-4 inline-flex shrink-0 items-center rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-medium text-slate-600">
+                    {t.pricing.comingSoon}
+                  </span>
+                )}
+                <div className="flex flex-1 flex-col p-5 sm:p-6">
+                  <div className="flex items-start gap-3 pr-20">
                     <span
                       className={`inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-2xl ${TONE_CLASSES[icon.tone]}`}
                       aria-hidden
@@ -48,43 +53,39 @@ export default function Pricing() {
                       {icon.emoji}
                     </span>
                     <div className="min-w-0 flex-1">
-                      <div className="flex flex-wrap items-start justify-between gap-2">
-                        <h3 className="text-base font-semibold leading-snug text-slate-900">
-                          {item.service}
-                        </h3>
-                        {"comingSoon" in item && item.comingSoon && (
-                          <span className="inline-flex shrink-0 items-center rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-medium text-slate-600">
-                            {t.pricing.comingSoon}
-                          </span>
-                        )}
+                      <h3 className="text-base font-semibold leading-snug text-slate-900">
+                        {item.service}
+                      </h3>
+                    </div>
+                  </div>
+
+                  <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                    {item.shortDesc}
+                  </p>
+
+                  <div className="mt-auto pt-4">
+                    <div className="rounded-lg bg-primary-50 px-3 py-2.5">
+                      <div className="flex items-baseline justify-between gap-2">
+                        <span className="text-[11px] font-semibold uppercase tracking-wide text-primary-700">
+                          {t.pricing.priceLabel}
+                        </span>
+                        <span className="text-base font-bold text-primary-800">
+                          {item.price}
+                        </span>
                       </div>
-                      <p className="mt-1 text-sm leading-relaxed text-slate-600">
-                        {item.shortDesc}
-                      </p>
+                      <div className="mt-0.5 flex items-baseline justify-between gap-2 text-xs text-primary-700/80">
+                        <span>{t.pricing.minLabel}</span>
+                        <span>{item.min}</span>
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="mt-4 rounded-lg bg-primary-50 px-3 py-2.5">
-                    <div className="flex items-baseline justify-between gap-2">
-                      <span className="text-[11px] font-semibold uppercase tracking-wide text-primary-700">
-                        {t.pricing.priceLabel}
-                      </span>
-                      <span className="text-base font-bold text-primary-800">
-                        {item.price}
-                      </span>
-                    </div>
-                    <div className="mt-0.5 flex items-baseline justify-between gap-2 text-xs text-primary-700/80">
-                      <span>{t.pricing.minLabel}</span>
-                      <span>{item.min}</span>
-                    </div>
+                    {"pickup" in item && item.pickup && (
+                      <div className="mt-3 flex items-center gap-2 rounded-lg border border-primary-200 bg-primary-50/60 px-3 py-2 text-xs text-primary-800">
+                        <span aria-hidden>🚐</span>
+                        <span>{item.pickup}</span>
+                      </div>
+                    )}
                   </div>
-
-                  {"pickup" in item && item.pickup && (
-                    <div className="mt-3 flex items-center gap-2 rounded-lg border border-primary-200 bg-primary-50/60 px-3 py-2 text-xs text-primary-800">
-                      <span aria-hidden>🚐</span>
-                      <span>{item.pickup}</span>
-                    </div>
-                  )}
                 </div>
 
                 <details className="group border-t border-slate-100">
