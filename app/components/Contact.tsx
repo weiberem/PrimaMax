@@ -208,6 +208,38 @@ export default function Contact() {
             </div>
 
             <WhatsAppButton className="w-full" label={t.contact.whatsappCta} />
+
+            <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+              <div className="flex items-center justify-between gap-2 border-b border-slate-100 px-4 py-3">
+                <div className="flex items-center gap-2">
+                  <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary-100 text-primary-700">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z" />
+                      <circle cx="12" cy="10" r="3" />
+                    </svg>
+                  </span>
+                  <span className="text-sm font-semibold text-slate-800">
+                    {t.contact.mapTitle}
+                  </span>
+                </div>
+                <a
+                  href="https://www.google.com/maps/place/Interlaken,+Switzerland"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-medium text-primary-700 hover:underline"
+                >
+                  {t.contact.mapOpenInGoogle} ↗
+                </a>
+              </div>
+              <iframe
+                title={t.contact.mapTitle}
+                src="https://www.google.com/maps?q=Interlaken+B%C3%B6deli+Switzerland&z=12&output=embed"
+                className="aspect-[4/3] w-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+            </div>
           </aside>
         </div>
       </div>

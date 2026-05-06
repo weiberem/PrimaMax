@@ -424,6 +424,8 @@ export const de = {
     regionList:
       "Interlaken · Matten · Unterseen · Wilderswil · Bönigen · Ringgenberg",
     whatsappCta: "Direkt per WhatsApp schreiben",
+    mapTitle: "Unser Einsatzgebiet",
+    mapOpenInGoogle: "In Google Maps öffnen",
   },
   footer: {
     description:
@@ -859,6 +861,8 @@ export const en: Dict = {
     regionList:
       "Interlaken · Matten · Unterseen · Wilderswil · Bönigen · Ringgenberg",
     whatsappCta: "Message us directly on WhatsApp",
+    mapTitle: "Our service area",
+    mapOpenInGoogle: "Open in Google Maps",
   },
   footer: {
     description:
