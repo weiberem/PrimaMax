@@ -442,6 +442,73 @@ export const de = {
     madeWith: "Erstellt mit Sorgfalt auf dem Bödeli.",
     credit: "Design & Code",
     creditBrand: "RW WebSolutions",
+    legalLinks: "Rechtliches",
+    impressum: "Impressum",
+    privacy: "Datenschutz",
+  },
+  legal: {
+    impressumTitle: "Impressum",
+    providerLabel: "Anbieter",
+    contactLabel: "Kontakt",
+    responsibleLabel: "Verantwortlich für den Inhalt",
+    responsibleBody:
+      "Die Inhaberinnen / Inhaber von PrimaMax sind verantwortlich für den Inhalt dieser Website.",
+    disclaimerLabel: "Haftungsausschluss",
+    disclaimerBody:
+      "Die Inhalte dieser Website werden mit grösster Sorgfalt erstellt. Für Richtigkeit, Vollständigkeit und Aktualität der Informationen kann jedoch keine Gewähr übernommen werden. Haftungsansprüche gegen die Betreiber für Schäden materieller oder ideeller Art, die durch die Nutzung der Website entstehen, sind ausgeschlossen, sofern kein vorsätzliches oder grob fahrlässiges Verschulden vorliegt.",
+    copyrightLabel: "Urheberrecht",
+    copyrightBody:
+      "Alle Inhalte (Texte, Bilder, Grafiken) auf dieser Website sind urheberrechtlich geschützt. Eine Vervielfältigung oder Verwendung in anderen Medien ohne ausdrückliche Zustimmung nicht gestattet.",
+    privacyTitle: "Datenschutzerklärung",
+    privacyLastUpdated: "Stand",
+    privacySections: [
+      {
+        title: "Allgemeines",
+        body: [
+          'PrimaMax (nachfolgend „wir") nimmt den Schutz Ihrer persönlichen Daten ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend dem schweizerischen Datenschutzgesetz (DSG) sowie – soweit anwendbar – der EU-Datenschutz-Grundverordnung (DSGVO).',
+          "Diese Erklärung beschreibt, welche Daten wir auf dieser Website erheben und wie wir sie verwenden.",
+        ],
+      },
+      {
+        title: "Kontaktformular und Buchungsanfragen",
+        body: [
+          "Wenn Sie uns über das Kontakt- oder Buchungsformular eine Anfrage senden, werden Ihre Angaben (Name, Kontaktdaten, Inhalt der Anfrage) zum Zweck der Bearbeitung Ihrer Anfrage gespeichert. Diese Daten werden nicht ohne Ihre Einwilligung weitergegeben.",
+          "Die Übermittlung dieser Formulare erfolgt aktuell über den Dienstleister Formspree (Formspree, Inc., USA). Formspree leitet die Nachricht an unsere E-Mail-Adresse weiter.",
+        ],
+      },
+      {
+        title: "KI-Preisrechner und Rechnungsassistent",
+        body: [
+          "Beim Einsatz des KI-Preisrechners werden Ihre Eingaben an die Anthropic-API (Anthropic, USA) übermittelt, um eine Schätzung zu erzeugen. Es findet kein dauerhaftes Speichern dieser Eingaben durch uns statt; es gelten die Datenschutzbestimmungen von Anthropic.",
+        ],
+      },
+      {
+        title: "Hosting (Vercel)",
+        body: [
+          "Diese Website wird auf der Plattform Vercel (Vercel Inc., USA) gehostet. Beim Aufruf werden Server-Logdaten (z.B. IP-Adresse, Datum, abgerufene URL, Browsertyp) verarbeitet, soweit dies für den sicheren Betrieb der Website erforderlich ist.",
+        ],
+      },
+      {
+        title: "Eingebundene Karte (Google Maps)",
+        body: [
+          "Auf der Kontaktseite ist eine Karte von Google Maps eingebunden. Beim Laden der Karte werden Daten (u.a. Ihre IP-Adresse) an Google übertragen. Mehr dazu in den Datenschutzbestimmungen von Google.",
+        ],
+      },
+      {
+        title: "Analyse",
+        body: [
+          "Wir setzen ein datenschutzfreundliches Analysewerkzeug von Vercel (Vercel Web Analytics) ein, das ohne Cookies und ohne Erfassung persönlich identifizierender Informationen funktioniert. Es werden lediglich aggregierte Statistiken zu Seitenaufrufen erfasst.",
+        ],
+      },
+      {
+        title: "Ihre Rechte",
+        body: [
+          "Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung Ihrer Daten. Wenden Sie sich dazu an die untenstehende Kontaktadresse.",
+        ],
+      },
+    ],
+    privacyContactLabel: "Kontakt für Datenschutzfragen",
+    privacyContactBody: "Bei Fragen zum Datenschutz erreichen Sie uns unter:",
   },
 };
 
@@ -884,6 +951,73 @@ export const en: Dict = {
     madeWith: "Made with care on the Bödeli.",
     credit: "Design & Code",
     creditBrand: "RW WebSolutions",
+    legalLinks: "Legal",
+    impressum: "Imprint",
+    privacy: "Privacy",
+  },
+  legal: {
+    impressumTitle: "Imprint",
+    providerLabel: "Provider",
+    contactLabel: "Contact",
+    responsibleLabel: "Responsible for content",
+    responsibleBody:
+      "The owners of PrimaMax are responsible for the content of this website.",
+    disclaimerLabel: "Disclaimer",
+    disclaimerBody:
+      "The content of this website is created with great care. However, no guarantee is given for the accuracy, completeness or timeliness of the information. Liability claims against the operators for damages of a material or immaterial nature arising from the use of the website are excluded, provided there is no intentional or grossly negligent fault.",
+    copyrightLabel: "Copyright",
+    copyrightBody:
+      "All content (texts, images, graphics) on this website is protected by copyright. Reproduction or use in other media is not permitted without express consent.",
+    privacyTitle: "Privacy policy",
+    privacyLastUpdated: "Last updated",
+    privacySections: [
+      {
+        title: "General",
+        body: [
+          "PrimaMax (\"we\") takes the protection of your personal data seriously. We treat your personal data confidentially and in accordance with the Swiss Data Protection Act (DSG) and – where applicable – the EU General Data Protection Regulation (GDPR).",
+          "This statement describes what data we collect on this website and how we use it.",
+        ],
+      },
+      {
+        title: "Contact form and booking inquiries",
+        body: [
+          "When you send us an inquiry via the contact or booking form, your details (name, contact details, content of the inquiry) are stored for the purpose of processing your request. This data is not passed on without your consent.",
+          "Submission of these forms is currently handled by the service provider Formspree (Formspree, Inc., USA). Formspree forwards the message to our email address.",
+        ],
+      },
+      {
+        title: "AI price calculator and invoice assistant",
+        body: [
+          "When using the AI price calculator, your inputs are transmitted to the Anthropic API (Anthropic, USA) to generate an estimate. We do not permanently store these inputs; Anthropic's data protection regulations apply.",
+        ],
+      },
+      {
+        title: "Hosting (Vercel)",
+        body: [
+          "This website is hosted on the Vercel platform (Vercel Inc., USA). When the site is accessed, server log data (e.g. IP address, date, accessed URL, browser type) is processed insofar as this is necessary for the secure operation of the website.",
+        ],
+      },
+      {
+        title: "Embedded map (Google Maps)",
+        body: [
+          "A Google Maps map is embedded on the contact page. When the map is loaded, data (including your IP address) is transmitted to Google. More information in Google's privacy policy.",
+        ],
+      },
+      {
+        title: "Analytics",
+        body: [
+          "We use a privacy-friendly analytics tool from Vercel (Vercel Web Analytics) that works without cookies and without recording personally identifiable information. Only aggregated statistics about page views are collected.",
+        ],
+      },
+      {
+        title: "Your rights",
+        body: [
+          "You have the right to information, correction, deletion and restriction of the processing of your data. To exercise these rights, please contact us using the contact address below.",
+        ],
+      },
+    ],
+    privacyContactLabel: "Contact for privacy questions",
+    privacyContactBody: "For questions about data protection, you can reach us at:",
   },
 };
 
