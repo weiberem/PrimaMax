@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { LanguageProvider } from "./i18n/LanguageProvider";
 
 export const metadata: Metadata = {
   title: "PrimaMax – Reinigung, Haushaltshilfe & Nähservice im Bödeli",
@@ -30,7 +31,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="de-CH">
-      <body className="min-h-screen bg-white">{children}</body>
+      <body className="min-h-screen bg-white">
+        <LanguageProvider>{children}</LanguageProvider>
+      </body>
     </html>
   );
 }

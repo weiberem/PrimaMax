@@ -1,11 +1,11 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
-import About from "./components/About";
 import Pricing from "./components/Pricing";
-import PriceCalculator from "./components/PriceCalculator";
-import Booking from "./components/Booking";
 import Contact from "./components/Contact";
+import About from "./components/About";
+import Booking from "./components/Booking";
+import PriceCalculator from "./components/PriceCalculator";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
 import RevealOnScroll from "./components/RevealOnScroll";
@@ -17,11 +17,11 @@ export default function Home() {
       <main>
         <Hero />
         <Services />
-        <About />
         <Pricing />
-        <PriceCalculator />
-        <Booking />
         <Contact />
+        <About />
+        <Booking />
+        <PriceCalculator />
       </main>
       <Footer />
       <WhatsAppButton floating />
