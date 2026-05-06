@@ -89,13 +89,8 @@ export default function Pricing() {
 
                 <details className="group border-t border-slate-100">
                   <summary className="flex cursor-pointer list-none items-center justify-between px-5 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 sm:px-6">
-                    <span className="inline-flex items-center gap-2">
-                      <span className="text-xs font-semibold uppercase tracking-wide text-slate-500">
-                        {t.pricing.includesLabel}
-                      </span>
-                      <span className="rounded-full bg-slate-100 px-1.5 py-0.5 text-[11px] font-medium text-slate-600">
-                        {item.includes.length}
-                      </span>
+                    <span className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+                      {t.pricing.includesLabel}
                     </span>
                     <svg
                       width="16"
