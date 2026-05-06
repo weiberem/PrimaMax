@@ -193,13 +193,38 @@ export const de = {
   },
   booking: {
     title: "Verfügbarkeit & Buchung",
-    badge: "Bald verfügbar",
-    heading: "Online-Buchung kommt bald",
-    body: "Bald können Sie unsere Verfügbarkeiten online einsehen und direkt einen Termin buchen. Bis dahin kontaktieren Sie uns einfach per WhatsApp oder Formular.",
-    contactCta: "Kontaktformular",
+    subtitle:
+      "Wählen Sie Ihren Wunschtermin – wir bestätigen schnellstmöglich. Kurzfristige Aufträge nehmen wir gerne direkt per Telefon oder WhatsApp entgegen.",
+    dateLabel: "Datum",
+    timeLabel: "Uhrzeit",
+    durationLabel: "Voraussichtliche Dauer",
+    durationOptions: [
+      { value: "2", label: "ca. 2 Stunden" },
+      { value: "3", label: "ca. 3 Stunden" },
+      { value: "4", label: "ca. 4 Stunden" },
+      { value: "6", label: "halber Tag" },
+      { value: "8", label: "ganzer Tag" },
+    ],
+    serviceLabel: "Leistung",
+    nameLabel: "Name",
+    contactLabel: "Telefon oder E-Mail",
+    addressLabel: "Adresse (optional)",
+    notesLabel: "Hinweise (optional)",
+    submit: "Termin anfragen",
+    submitting: "Wird gesendet …",
+    success: "Vielen Dank! Wir bestätigen Ihren Termin schnellstmöglich.",
+    errorGeneric:
+      "Senden hat nicht geklappt. Bitte rufen Sie uns kurz an oder schreiben Sie uns auf WhatsApp.",
+    shortNoticeBadge: "Kurzfristig",
+    shortNoticeTitle: "Innerhalb von 24 Stunden? Direkt anrufen oder schreiben.",
+    shortNoticeBody:
+      "Termine innerhalb der nächsten 24 Stunden nehmen wir gerne direkt per Telefon oder WhatsApp entgegen – so können wir am schnellsten reagieren.",
+    callCta: "Jetzt anrufen",
     whatsappCta: "WhatsApp schreiben",
-    placeholder:
-      "Hier erscheint demnächst unser Online-Kalender für direkte Terminbuchungen.",
+    friendlyHint:
+      "Tipp: Kurzfristige Aufträge gerne direkt per Telefon oder WhatsApp – wir melden uns sofort.",
+    selectedSummary: "Ihr Wunschtermin",
+    minDateNote: "Online-Buchung ab frühestens 24 Stunden im Voraus möglich.",
   },
   contact: {
     title: "Kontakt",
@@ -247,7 +272,9 @@ export const de = {
     legal: "Impressum",
     legalText: "Vollständiges Impressum folgt.",
     rights: "Alle Rechte vorbehalten.",
-    madeWith: "Erstellt mit Sorgfalt im Bödeli.",
+    madeWith: "Erstellt mit Sorgfalt auf dem Bödeli.",
+    credit: "Design & Code",
+    creditBrand: "RW WebSolutions",
   },
 };
 
@@ -441,13 +468,39 @@ export const en: Dict = {
   },
   booking: {
     title: "Availability & booking",
-    badge: "Coming soon",
-    heading: "Online booking coming soon",
-    body: "Soon you'll be able to view our availabilities online and book an appointment directly. Until then please contact us via WhatsApp or our form.",
-    contactCta: "Contact form",
+    subtitle:
+      "Pick your preferred date and time – we'll confirm as soon as possible. Short-notice requests are best handled directly by phone or WhatsApp.",
+    dateLabel: "Date",
+    timeLabel: "Time",
+    durationLabel: "Estimated duration",
+    durationOptions: [
+      { value: "2", label: "approx. 2 hours" },
+      { value: "3", label: "approx. 3 hours" },
+      { value: "4", label: "approx. 4 hours" },
+      { value: "6", label: "half a day" },
+      { value: "8", label: "full day" },
+    ],
+    serviceLabel: "Service",
+    nameLabel: "Name",
+    contactLabel: "Phone or email",
+    addressLabel: "Address (optional)",
+    notesLabel: "Notes (optional)",
+    submit: "Request appointment",
+    submitting: "Sending …",
+    success: "Thank you! We'll confirm your appointment as soon as possible.",
+    errorGeneric:
+      "Sending failed. Please call us briefly or message us on WhatsApp.",
+    shortNoticeBadge: "Short notice",
+    shortNoticeTitle:
+      "Within the next 24 hours? Please call or message us directly.",
+    shortNoticeBody:
+      "We accept appointments within the next 24 hours directly via phone or WhatsApp – that way we can respond quickly.",
+    callCta: "Call now",
     whatsappCta: "Message on WhatsApp",
-    placeholder:
-      "Our online calendar for direct bookings will appear here soon.",
+    friendlyHint:
+      "Tip: For short-notice requests, please reach us directly by phone or WhatsApp – we'll get back right away.",
+    selectedSummary: "Your selected appointment",
+    minDateNote: "Online booking is possible from 24 hours in advance.",
   },
   contact: {
     title: "Contact",
@@ -495,7 +548,9 @@ export const en: Dict = {
     legal: "Legal notice",
     legalText: "Full legal notice to follow.",
     rights: "All rights reserved.",
-    madeWith: "Made with care in the Bödeli.",
+    madeWith: "Made with care on the Bödeli.",
+    credit: "Design & Code",
+    creditBrand: "RW WebSolutions",
   },
 };
 

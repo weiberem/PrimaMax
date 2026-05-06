@@ -77,7 +77,16 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="container-x py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-primary-100/80">
           <span>© {year} PrimaMax. {t.footer.rights}</span>
-          <span>{t.footer.madeWith}</span>
+          <span className="flex flex-wrap items-center gap-x-2 gap-y-1">
+            <span>{t.footer.madeWith}</span>
+            <span aria-hidden className="opacity-60">·</span>
+            <span className="text-primary-100/70">
+              {t.footer.credit}:{" "}
+              <span className="font-medium tracking-tight text-white/90">
+                {t.footer.creditBrand}
+              </span>
+            </span>
+          </span>
         </div>
       </div>
     </footer>
