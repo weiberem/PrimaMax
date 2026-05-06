@@ -91,11 +91,15 @@ export default function PriceCalculator() {
         <div className="reveal max-w-3xl">
           <div className="flex flex-wrap items-center gap-3">
             <h2 className="section-title">{t.calculator.title}</h2>
-            <span className="inline-flex items-center rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-medium text-slate-600">
+            <span className="inline-flex items-center gap-1 rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide text-amber-800">
+              <span aria-hidden>🧪</span>
               {t.calculator.comingSoonBadge}
             </span>
           </div>
           <p className="section-subtitle">{t.calculator.subtitle}</p>
+          <p className="mt-3 max-w-2xl rounded-lg border border-amber-200 bg-amber-50 px-4 py-2 text-sm text-amber-900">
+            {t.calculator.betaNote}
+          </p>
         </div>
 
         <div className="mt-10 grid gap-8 lg:grid-cols-5 items-start">

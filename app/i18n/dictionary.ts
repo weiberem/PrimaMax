@@ -12,6 +12,7 @@ export const de = {
     calculator: "Preisrechner",
     cta: "Anfragen",
     comingSoon: "bald",
+    beta: "Beta",
     openMenu: "Menü öffnen",
   },
   hero: {
@@ -149,7 +150,9 @@ export const de = {
   },
   calculator: {
     title: "KI-Preisrechner",
-    comingSoonBadge: "Bald verfügbar",
+    comingSoonBadge: "Beta-Version",
+    betaNote:
+      "Wir testen den Preisrechner gerade. Die Schätzung dient als Orientierung – das verbindliche Angebot machen wir nach Rücksprache.",
     subtitle:
       "Beschreiben Sie kurz, was Sie brauchen – wir schätzen Ihnen unverbindlich eine Preisspanne. Schnell, einfach und transparent.",
     descriptionLabel: "Was brauchen Sie?",
@@ -288,6 +291,7 @@ export const en: Dict = {
     calculator: "Price calculator",
     cta: "Inquire",
     comingSoon: "soon",
+    beta: "Beta",
     openMenu: "Open menu",
   },
   hero: {
@@ -425,7 +429,9 @@ export const en: Dict = {
   },
   calculator: {
     title: "AI price calculator",
-    comingSoonBadge: "Coming soon",
+    comingSoonBadge: "Beta version",
+    betaNote:
+      "We're currently testing the price calculator. The estimate serves as a rough orientation – we'll send a binding offer after a quick chat.",
     subtitle:
       "Briefly describe what you need – we'll give you a non-binding price range. Fast, simple and transparent.",
     descriptionLabel: "What do you need?",
