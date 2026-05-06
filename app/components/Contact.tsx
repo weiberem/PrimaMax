@@ -200,9 +200,12 @@ export default function Contact() {
                     {t.contact.regionLabel}
                   </div>
                   <div className="text-slate-800 font-medium">
-                    {t.contact.regionValue}
+                    Aenderbergstrasse 19
                   </div>
-                  <div className="text-xs text-slate-500">{t.contact.regionList}</div>
+                  <div className="text-slate-700">
+                    3800 Matten bei Interlaken
+                  </div>
+                  <div className="mt-1 text-xs text-slate-500">{t.contact.regionList}</div>
                 </div>
               </div>
             </div>
@@ -223,7 +226,7 @@ export default function Contact() {
                   </span>
                 </div>
                 <a
-                  href="https://www.google.com/maps/place/Interlaken,+Switzerland"
+                  href="https://www.google.com/maps/search/?api=1&query=Aenderbergstrasse+19,+3800+Matten+bei+Interlaken"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-xs font-medium text-primary-700 hover:underline"
@@ -233,7 +236,7 @@ export default function Contact() {
               </div>
               <iframe
                 title={t.contact.mapTitle}
-                src="https://www.google.com/maps?q=Interlaken+B%C3%B6deli+Switzerland&z=12&output=embed"
+                src="https://www.google.com/maps?q=Aenderbergstrasse+19,+3800+Matten+bei+Interlaken&z=15&output=embed"
                 className="aspect-[4/3] w-full border-0"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"

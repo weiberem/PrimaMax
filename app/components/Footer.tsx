@@ -62,7 +62,8 @@ export default function Footer() {
           {/* TODO: Replace with real Impressum / legal information */}
           <div className="mt-3 text-sm text-primary-100/85 leading-relaxed">
             PrimaMax<br />
-            Bödeli, Schweiz<br />
+            Aenderbergstrasse 19<br />
+            3800 Matten bei Interlaken<br />
             E-Mail: info@primamax.ch<br />
             <span className="text-primary-200/70">{t.footer.legalText}</span>
           </div>
