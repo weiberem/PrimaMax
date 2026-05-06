@@ -355,6 +355,11 @@ export const de = {
     title: "Verfügbarkeit & Buchung",
     subtitle:
       "Wählen Sie Ihren Wunschtermin – wir bestätigen schnellstmöglich. Kurzfristige Aufträge nehmen wir gerne direkt per Telefon oder WhatsApp entgegen.",
+    inquiryOnlyBadge: "Aktuell auf Anfrage",
+    inquiryOnlyTitle: "Termine vergeben wir aktuell persönlich",
+    inquiryOnlyBody:
+      "Bis Ende Mai läuft unsere Online-Direktbuchung noch nicht – wir koordinieren Ihren Termin lieber kurz persönlich, damit alles passt. Schreiben Sie uns auf WhatsApp oder rufen Sie an – wir melden uns sofort zurück.",
+    inquiryOnlyContactCta: "Per Formular anfragen",
     dateLabel: "Datum",
     timeLabel: "Uhrzeit",
     durationLabel: "Voraussichtliche Dauer",
@@ -791,6 +796,11 @@ export const en: Dict = {
     title: "Availability & booking",
     subtitle:
       "Pick your preferred date and time – we'll confirm as soon as possible. Short-notice requests are best handled directly by phone or WhatsApp.",
+    inquiryOnlyBadge: "By inquiry only",
+    inquiryOnlyTitle: "We currently arrange appointments personally",
+    inquiryOnlyBody:
+      "Until the end of May our direct online booking isn't live yet – we'd rather coordinate your appointment briefly in person so everything fits. Message us on WhatsApp or give us a call – we'll get back to you right away.",
+    inquiryOnlyContactCta: "Send a request via form",
     dateLabel: "Date",
     timeLabel: "Time",
     durationLabel: "Estimated duration",
