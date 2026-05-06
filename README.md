@@ -25,7 +25,12 @@ npm start
 ## Deployment auf Vercel
 
 1. Repository auf [Vercel](https://vercel.com/new) importieren.
-2. Framework Preset: **Next.js** (wird automatisch erkannt).
+2. Framework Preset: **Next.js** (wird automatisch erkannt). Die mitgelieferte `vercel.json` setzt `framework: "nextjs"` zusätzlich explizit.
+
+> **Falls der Build mit `No Output Directory named "public" found` fehlschlägt:**
+> Vercel-Projekt-Einstellungen öffnen → **Settings → Build & Development Settings** →
+> **Framework Preset** auf "Next.js" stellen und ggf. den manuell gesetzten
+> "Output Directory"-Override entfernen (leer lassen). Anschliessend neu deployen.
 3. **Environment Variable** hinzufügen:
    - **Settings → Environment Variables**
    - Name: `ANTHROPIC_API_KEY`
