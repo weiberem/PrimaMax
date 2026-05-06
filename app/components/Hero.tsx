@@ -1,4 +1,9 @@
+"use client";
+
+import { useLang } from "../i18n/LanguageProvider";
+
 export default function Hero() {
+  const { t } = useLang();
   return (
     <section
       id="top"
@@ -12,39 +17,33 @@ export default function Hero() {
         <div className="animate-fade-in-up">
           <span className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-medium text-primary-700 border border-primary-100 shadow-sm">
             <span className="h-2 w-2 rounded-full bg-primary-500" />
-            Region Interlaken / Bödeli
+            {t.hero.badge}
           </span>
           <h1 className="mt-5 text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-slate-900">
-            Ihr zuverlässiger Partner für{" "}
-            <span className="text-primary-600">Sauberkeit</span> und{" "}
-            <span className="text-alpine-600">Pflege</span> im Bödeli
+            {t.hero.title1}{" "}
+            <span className="text-primary-600">{t.hero.title2}</span>{" "}
+            {t.hero.title3}{" "}
+            <span className="text-primary-700">{t.hero.title4}</span>{" "}
+            {t.hero.title5}
           </h1>
-          <p className="mt-5 text-lg text-slate-600 max-w-xl">
-            Reinigung, Haushaltshilfe, Nähservice und Hauswartsarbeiten – mit
-            Sorgfalt und einem persönlichen Lächeln. Wir kümmern uns, damit Sie
-            Zeit für das Wesentliche haben.
-          </p>
+          <p className="mt-5 text-lg text-slate-600 max-w-xl">{t.hero.subtitle}</p>
 
           <div className="mt-7 flex flex-wrap gap-3">
             <a href="#contact" className="btn-primary">
-              Jetzt anfragen
+              {t.hero.ctaPrimary}
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
             </a>
             <a href="#calculator" className="btn-secondary">
-              Preis berechnen
+              {t.hero.ctaSecondary}
             </a>
           </div>
 
           <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600">
-            <div className="flex items-center gap-2">
-              <CheckIcon /> Lokal verwurzelt
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckIcon /> Zuverlässig
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckIcon /> Sorgfältig
-            </div>
+            {t.hero.bullets.map((b) => (
+              <div key={b} className="flex items-center gap-2">
+                <CheckIcon /> {b}
+              </div>
+            ))}
           </div>
         </div>
 
@@ -59,37 +58,31 @@ export default function Hero() {
             >
               <defs>
                 <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#cfe9e0" />
-                  <stop offset="100%" stopColor="#f5f7f4" />
+                  <stop offset="0%" stopColor="#dbeafe" />
+                  <stop offset="100%" stopColor="#f8fafc" />
                 </linearGradient>
                 <linearGradient id="mtn1" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#2d7d6f" />
-                  <stop offset="100%" stopColor="#1f4d47" />
+                  <stop offset="0%" stopColor="#1e3a8a" />
+                  <stop offset="100%" stopColor="#172554" />
                 </linearGradient>
                 <linearGradient id="mtn2" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#82cdb7" />
-                  <stop offset="100%" stopColor="#369583" />
+                  <stop offset="0%" stopColor="#60a5fa" />
+                  <stop offset="100%" stopColor="#2563eb" />
                 </linearGradient>
               </defs>
               <rect width="400" height="300" fill="url(#sky)" />
-              <circle cx="320" cy="70" r="32" fill="#fde9c8" />
+              <circle cx="320" cy="70" r="32" fill="#ffffff" opacity="0.7" />
               <polygon points="0,220 80,120 160,200 240,90 320,180 400,140 400,300 0,300" fill="url(#mtn1)" />
-              <polygon points="0,250 60,180 130,230 200,160 280,220 360,170 400,210 400,300 0,300" fill="url(#mtn2)" opacity="0.85" />
-              <polygon points="60,120 80,90 100,120" fill="#ffffff" opacity="0.85" />
-              <polygon points="220,90 240,55 260,90" fill="#ffffff" opacity="0.9" />
-              <rect x="160" y="220" width="80" height="50" fill="#ffffff" rx="3" />
-              <polygon points="160,220 200,190 240,220" fill="#a94f2d" />
-              <rect x="185" y="240" width="14" height="30" fill="#246058" />
-              <rect x="170" y="232" width="12" height="10" fill="#82cdb7" />
-              <rect x="208" y="232" width="12" height="10" fill="#82cdb7" />
+              <polygon points="0,250 60,180 130,230 200,160 280,220 360,170 400,210 400,300 0,300" fill="url(#mtn2)" opacity="0.8" />
+              <polygon points="60,120 80,90 100,120" fill="#ffffff" opacity="0.95" />
+              <polygon points="220,90 240,55 260,90" fill="#ffffff" opacity="0.95" />
+              <polygon points="300,150 320,125 340,150" fill="#ffffff" opacity="0.85" />
             </svg>
             <div className="absolute bottom-4 left-4 right-4 rounded-2xl bg-white/85 backdrop-blur px-4 py-3 shadow-sm">
               <div className="text-sm font-semibold text-primary-700">
-                Bödeli & Umgebung
+                {t.hero.region}
               </div>
-              <div className="text-xs text-slate-600">
-                Interlaken · Matten · Unterseen · Wilderswil · Bönigen · Ringgenberg
-              </div>
+              <div className="text-xs text-slate-600">{t.hero.regionList}</div>
             </div>
           </div>
         </div>

@@ -1,63 +1,28 @@
-type Service = {
-  emoji: string;
-  title: string;
-  description: string;
-  bullets: string[];
-  comingSoon?: boolean;
-};
+"use client";
 
-const services: Service[] = [
-  {
-    emoji: "🧽",
-    title: "Reinigung",
-    description:
-      "Wohnungs-, Haus- und Büroreinigung – sorgfältig und mit Liebe zum Detail.",
-    bullets: ["Endreinigung mit Abnahmegarantie", "Regelmässige Unterhaltsreinigung", "Einmalige Grundreinigung"],
-  },
-  {
-    emoji: "🧺",
-    title: "Haushaltshilfe",
-    description:
-      "Wir entlasten Sie im Alltag – damit mehr Zeit bleibt für das, was Ihnen wichtig ist.",
-    bullets: ["Einkaufen & Besorgungen", "Bügeln & Wäschepflege", "Aufräumen & Ordnung halten"],
-  },
-  {
-    emoji: "🪡",
-    title: "Nähservice",
-    description:
-      "Vom kleinen Riss bis zur Spezialnaht – wir reparieren, ändern und nähen neu.",
-    bullets: ["Kleiderreparaturen & Änderungen", "Outdoorbekleidung (z.B. Gore-Tex)", "Vorhänge, Tischtücher, Masken, Neuanfertigungen"],
-  },
-  {
-    emoji: "🌱",
-    title: "Hauswartsarbeiten",
-    description:
-      "Rund ums Haus und um die Liegenschaft – zuverlässig und gewissenhaft.",
-    bullets: ["Rasenmähen & Umgebungspflege", "Treppenhausreinigung", "Malerarbeiten & Streichen"],
-    comingSoon: true,
-  },
-];
+import { useLang } from "../i18n/LanguageProvider";
+
+const EMOJIS = ["🧽", "🏠", "🧺", "🪡", "🌱"];
 
 export default function Services() {
+  const { t } = useLang();
+  const services = t.services.items;
   return (
     <section id="services" className="section bg-white">
       <div className="container-x">
         <div className="reveal max-w-3xl">
-          <h2 className="section-title">Unsere Leistungen</h2>
-          <p className="section-subtitle">
-            Vier Bereiche, ein Versprechen: Sie können sich auf uns verlassen.
-            Lokal verwurzelt im Bödeli – Anfahrt innerhalb der Region inklusive.
-          </p>
+          <h2 className="section-title">{t.services.title}</h2>
+          <p className="section-subtitle">{t.services.subtitle}</p>
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map((s) => (
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+          {services.map((s, idx) => (
             <article key={s.title} className="reveal card flex flex-col">
               <div className="flex items-start justify-between">
-                <div className="text-4xl">{s.emoji}</div>
-                {s.comingSoon && (
-                  <span className="inline-flex items-center rounded-full bg-alpine-100 px-2.5 py-0.5 text-xs font-medium text-alpine-700">
-                    Bald verfügbar
+                <div className="text-4xl">{EMOJIS[idx] ?? "✨"}</div>
+                {"comingSoon" in s && s.comingSoon && (
+                  <span className="inline-flex items-center rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-medium text-slate-600">
+                    {t.services.comingSoon}
                   </span>
                 )}
               </div>

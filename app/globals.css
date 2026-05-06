@@ -59,3 +59,25 @@ body {
     @apply opacity-100 translate-y-0;
   }
 }
+
+@media print {
+  body {
+    background: #ffffff !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .invoice-print-area {
+    width: 100% !important;
+  }
+  .invoice-document {
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+  @page {
+    size: A4;
+    margin: 18mm;
+  }
+}

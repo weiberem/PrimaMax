@@ -1,4 +1,9 @@
+"use client";
+
+import { useLang } from "../i18n/LanguageProvider";
+
 export default function Footer() {
+  const { t } = useLang();
   const year = new Date().getFullYear();
   return (
     <footer className="bg-primary-900 text-primary-50">
@@ -13,44 +18,66 @@ export default function Footer() {
             </span>
           </div>
           <p className="mt-3 text-sm text-primary-100/90 max-w-sm">
-            Reinigung, Haushaltshilfe, Nähservice und Hauswartsarbeiten in der
-            Region Interlaken / Bödeli – mit Sorgfalt und Herzblut.
+            {t.footer.description}
           </p>
         </div>
 
         <div>
           <h4 className="text-sm font-semibold uppercase tracking-wide text-white/80">
-            Schnellzugriff
+            {t.footer.quickAccess}
           </h4>
           <ul className="mt-3 space-y-2 text-sm">
-            <li><a href="#services" className="hover:text-white">Leistungen</a></li>
-            <li><a href="#pricing" className="hover:text-white">Preise</a></li>
-            <li><a href="#calculator" className="hover:text-white">Preisrechner</a></li>
-            <li><a href="#booking" className="hover:text-white">Buchung</a></li>
-            <li><a href="#contact" className="hover:text-white">Kontakt</a></li>
+            <li>
+              <a href="#services" className="hover:text-white">
+                {t.nav.services}
+              </a>
+            </li>
+            <li>
+              <a href="#pricing" className="hover:text-white">
+                {t.nav.pricing}
+              </a>
+            </li>
+            <li>
+              <a href="#contact" className="hover:text-white">
+                {t.nav.contact}
+              </a>
+            </li>
+            <li>
+              <a href="#about" className="hover:text-white">
+                {t.nav.about}
+              </a>
+            </li>
+            <li>
+              <a href="#booking" className="hover:text-white">
+                {t.nav.booking}
+              </a>
+            </li>
+            <li>
+              <a href="#calculator" className="hover:text-white">
+                {t.nav.calculator}
+              </a>
+            </li>
           </ul>
         </div>
 
         <div>
           <h4 className="text-sm font-semibold uppercase tracking-wide text-white/80">
-            Impressum
+            {t.footer.legal}
           </h4>
           {/* TODO: Replace with real Impressum / legal information */}
           <div className="mt-3 text-sm text-primary-100/85 leading-relaxed">
             PrimaMax<br />
             Bödeli, Schweiz<br />
             E-Mail: info@primamax.ch<br />
-            <span className="text-primary-200/70">
-              Vollständiges Impressum folgt.
-            </span>
+            <span className="text-primary-200/70">{t.footer.legalText}</span>
           </div>
         </div>
       </div>
 
       <div className="border-t border-white/10">
         <div className="container-x py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-primary-100/80">
-          <span>© {year} PrimaMax. Alle Rechte vorbehalten.</span>
-          <span>Erstellt mit Sorgfalt im Bödeli.</span>
+          <span>© {year} PrimaMax. {t.footer.rights}</span>
+          <span>{t.footer.madeWith}</span>
         </div>
       </div>
     </footer>

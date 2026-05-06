@@ -1,19 +1,21 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
-const links = [
-  { href: "#services", label: "Leistungen" },
-  { href: "#about", label: "Über uns" },
-  { href: "#pricing", label: "Preise" },
-  { href: "#calculator", label: "Preisrechner" },
-  { href: "#booking", label: "Buchung" },
-  { href: "#contact", label: "Kontakt" },
-];
+import { useLang } from "../i18n/LanguageProvider";
 
 export default function Navbar() {
+  const { t, lang, setLang } = useLang();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+
+  const links: { href: string; label: string; comingSoon?: boolean }[] = [
+    { href: "#services", label: t.nav.services },
+    { href: "#pricing", label: t.nav.pricing },
+    { href: "#contact", label: t.nav.contact },
+    { href: "#about", label: t.nav.about },
+    { href: "#booking", label: t.nav.booking, comingSoon: true },
+    { href: "#calculator", label: t.nav.calculator, comingSoon: true },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -40,23 +42,29 @@ export default function Navbar() {
           </span>
         </a>
 
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-5">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-slate-600 hover:text-primary-700 transition"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-600 hover:text-primary-700 transition"
             >
               {l.label}
+              {l.comingSoon && (
+                <span className="rounded-full bg-slate-100 px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wide text-slate-500">
+                  {t.nav.comingSoon}
+                </span>
+              )}
             </a>
           ))}
+          <LanguageSwitcher lang={lang} setLang={setLang} />
           <a href="#contact" className="btn-primary !py-2 !px-4 text-sm">
-            Anfragen
+            {t.nav.cta}
           </a>
         </nav>
 
         <button
-          aria-label="Menu öffnen"
+          aria-label={t.nav.openMenu}
           aria-expanded={open}
           className="md:hidden inline-flex items-center justify-center rounded-lg p-2 text-slate-700 hover:bg-slate-100"
           onClick={() => setOpen((v) => !v)}
@@ -86,21 +94,68 @@ export default function Navbar() {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="py-2 text-slate-700 hover:text-primary-700"
+                className="flex items-center justify-between py-2 text-slate-700 hover:text-primary-700"
               >
-                {l.label}
+                <span>{l.label}</span>
+                {l.comingSoon && (
+                  <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-slate-500">
+                    {t.nav.comingSoon}
+                  </span>
+                )}
               </a>
             ))}
+            <div className="mt-3">
+              <LanguageSwitcher lang={lang} setLang={setLang} />
+            </div>
             <a
               href="#contact"
               onClick={() => setOpen(false)}
-              className="btn-primary mt-2 text-sm"
+              className="btn-primary mt-3 text-sm"
             >
-              Anfragen
+              {t.nav.cta}
             </a>
           </nav>
         </div>
       )}
     </header>
+  );
+}
+
+function LanguageSwitcher({
+  lang,
+  setLang,
+}: {
+  lang: "de" | "en";
+  setLang: (l: "de" | "en") => void;
+}) {
+  return (
+    <div
+      role="group"
+      aria-label="Language"
+      className="inline-flex overflow-hidden rounded-full border border-slate-200 text-xs"
+    >
+      <button
+        type="button"
+        onClick={() => setLang("de")}
+        className={`px-2.5 py-1 font-medium transition ${
+          lang === "de"
+            ? "bg-primary-600 text-white"
+            : "bg-white text-slate-600 hover:bg-slate-50"
+        }`}
+      >
+        DE
+      </button>
+      <button
+        type="button"
+        onClick={() => setLang("en")}
+        className={`px-2.5 py-1 font-medium transition ${
+          lang === "en"
+            ? "bg-primary-600 text-white"
+            : "bg-white text-slate-600 hover:bg-slate-50"
+        }`}
+      >
+        EN
+      </button>
+    </div>
   );
 }
