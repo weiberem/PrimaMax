@@ -10,8 +10,10 @@ export const de = {
     about: "Über uns",
     booking: "Buchung",
     calculator: "Preisrechner",
+    faq: "FAQ",
     cta: "Anfragen",
     comingSoon: "bald",
+    beta: "Beta",
     openMenu: "Menü öffnen",
   },
   hero: {
@@ -104,97 +106,261 @@ export const de = {
   pricing: {
     title: "Transparente Preise",
     subtitle:
-      "Faire Konditionen, keine versteckten Kosten. Alle Preise verstehen sich inklusive Anfahrt im Bödeli. Einsätze ausserhalb des Bödelis auf Anfrage.",
-    headers: { service: "Leistung", price: "Preis", min: "Mindestdauer" },
+      "Faire Konditionen, keine versteckten Kosten. Stundensätze inklusive Material wie Reinigungstücher und Grundprodukte.",
+    priceLabel: "Preis",
+    minLabel: "Mindestdauer",
+    includesLabel: "Im Stundensatz enthalten",
+    pickupLabel: "Abholservice",
     comingSoon: "Bald verfügbar",
-    rows: [
-      { service: "Reinigung", price: "ab CHF 45/h", min: "min. 2 h" },
+    items: [
+      {
+        service: "Reinigung",
+        shortDesc:
+          "Wohnungs-, Haus- und Büroreinigung mit Auge fürs Detail.",
+        includes: [
+          "Staubsaugen, Wischen, Staubwischen",
+          "Küche: Arbeitsflächen, Spüle, Fronten",
+          "Bad & WC: Sanitär, Fugen, Spiegel",
+          "Mülleimer leeren, Oberflächen desinfizieren",
+        ],
+        price: "ab CHF 45/h",
+        min: "min. 2 h",
+      },
+      {
+        service: "Endreinigung mit Abnahmegarantie",
+        shortDesc:
+          "Komplette Wohnungsübergabe – sauber bis in die Ecken, Abnahme garantiert.",
+        includes: [
+          "Tiefenreinigung Küche inkl. Backofen, Kühlschrank",
+          "Bad: Kalkentfernung, Fugen, Armaturen",
+          "Fenster innen + Rahmen + Storen",
+          "Böden, Wände, Heizkörper, Lüftungsgitter",
+          "Nachbesserung kostenlos bei Beanstandung",
+        ],
+        price: "Pauschale auf Anfrage",
+        min: "nach Objekt",
+      },
       {
         service: "Airbnb / Ferienwohnung Wechselreinigung",
+        shortDesc:
+          "Hotelstandard zwischen Gästewechseln – frisch, schnell, zuverlässig.",
+        includes: [
+          "Komplettreinigung der Wohnung",
+          "Bettwäsche & Handtücher wechseln",
+          "Küche & Bad sanitärrein",
+          "Mülltrennung & Auffüllen Verbrauchsmaterial",
+          "Foto-Check für Vermieter:in auf Wunsch",
+        ],
         price: "ab CHF 50/h",
         min: "Pauschale auf Anfrage",
       },
-      { service: "Haushaltshilfe", price: "ab CHF 40/h", min: "min. 2 h" },
+      {
+        service: "Haushaltshilfe",
+        shortDesc:
+          "Entlastung im Alltag – wir kümmern uns um das Drumherum.",
+        includes: [
+          "Wäsche waschen, aufhängen, zusammenlegen",
+          "Bügeln & einfache Näharbeiten",
+          "Einkaufen & Besorgungen im Bödeli",
+          "Aufräumen & Ordnung halten",
+          "Pflanzen giessen während Abwesenheit",
+        ],
+        price: "ab CHF 40/h",
+        min: "min. 2 h",
+      },
       {
         service: "Nähservice (einfach)",
+        shortDesc:
+          "Reparaturen, Änderungen und kleine Neuanfertigungen.",
+        includes: [
+          "Hosen & Röcke kürzen",
+          "Reissverschluss ersetzen",
+          "Knöpfe annähen, Risse flicken",
+          "Vorhänge & Tischtücher",
+        ],
         price: "ab CHF 35/h",
         min: "min. 1 h",
+        pickup: "Kostenloser Abholservice im Bödeli",
       },
       {
         service: "Nähservice (Outdoor / Spezial)",
+        shortDesc:
+          "Gore-Tex, Daunen, technische Stoffe – mit dem richtigen Material und Know-how.",
+        includes: [
+          "Gore-Tex-Reparatur mit Spezialband",
+          "Daunenjacken & Schlafsäcke",
+          "Outdoorhosen, Gamaschen, Rucksäcke",
+          "Spezialnähte & Verstärkungen",
+        ],
         price: "ab CHF 45/h",
         min: "min. 1 h",
+        pickup: "Kostenloser Abholservice im Bödeli",
       },
       {
         service: "Gartenarbeit / Umgebung",
+        shortDesc:
+          "Rund ums Haus und im Garten – saubere und gepflegte Umgebung.",
+        includes: [
+          "Rasenmähen & Rasenkanten",
+          "Hecken schneiden",
+          "Unkraut jäten, Beete pflegen",
+          "Laubentfernung",
+        ],
         price: "ab CHF 50/h",
         min: "min. 2 h",
         comingSoon: true as const,
       },
       {
         service: "Malerarbeiten",
+        shortDesc: "Frische Farbe für innen – sauber abgedeckt und sauber gefinisht.",
+        includes: [
+          "Wände streichen / Tapezieren",
+          "Decken weissen",
+          "Türen & Rahmen",
+          "Vorbereitung & Schutz der Möbel",
+        ],
         price: "ab CHF 55/h",
         min: "min. 3 h",
         comingSoon: true as const,
       },
       {
         service: "Treppenhausreinigung",
+        shortDesc: "Regelmässige oder einmalige Reinigung von Treppenhäusern.",
+        includes: [
+          "Treppenstufen & Geländer",
+          "Eingangsbereich & Briefkästen",
+          "Lift & Tasten desinfizieren",
+          "Fenster im Treppenhaus",
+        ],
         price: "Pauschale nach Objekt",
-        min: "—",
+        min: "nach Objekt",
         comingSoon: true as const,
       },
     ],
-    footnote:
-      "Anfahrt innerhalb des Bödelis (Interlaken, Matten, Unterseen, Wilderswil, Bönigen, Ringgenberg) inklusive. Ausserhalb auf Anfrage.",
+    travelTitle: "Anfahrt – fair und transparent",
+    travelRules: [
+      {
+        label: "Im Bödeli, Mindestdauer eingehalten",
+        value: "Anfahrt inklusive",
+        positive: true as const,
+      },
+      {
+        label: "Im Bödeli, kürzer als Mindestdauer",
+        value: "CHF 40 Anfahrtspauschale",
+      },
+      {
+        label: "Ausserhalb Bödeli",
+        value: "CHF 0.70/km (Hin- und Rückweg)",
+      },
+      {
+        label: "Nähservice",
+        value: "Kostenloser Abholservice im Bödeli",
+        positive: true as const,
+      },
+    ],
+    travelNote:
+      "Bödeli umfasst: Interlaken, Matten, Unterseen, Wilderswil, Bönigen, Ringgenberg. Der Kilometeransatz von CHF 0.70 entspricht dem offiziellen Schweizer Spesenansatz.",
   },
   calculator: {
     title: "KI-Preisrechner",
-    comingSoonBadge: "Bald verfügbar",
+    comingSoonBadge: "Beta-Version",
+    betaNote:
+      "Wir testen den Preisrechner gerade. Die Schätzung dient als Orientierung – das verbindliche Angebot machen wir nach Rücksprache.",
     subtitle:
-      "Beschreiben Sie kurz, was Sie brauchen – wir schätzen Ihnen unverbindlich eine Preisspanne. Schnell, einfach und transparent.",
-    descriptionLabel: "Was brauchen Sie?",
-    descriptionPlaceholder:
-      "z.B. Endreinigung 3.5-Zimmer-Wohnung in Matten, mit Backofen und Fenstern …",
-    servicesLabel: "Leistungen",
-    services: [
-      "Reinigung",
-      "Endreinigung",
-      "Airbnb / Ferienwohnung",
-      "Haushaltshilfe",
-      "Bügeln / Wäsche",
-      "Nähservice (einfach)",
-      "Nähservice (Outdoor)",
-    ],
-    areaLabel: "Fläche (m²)",
-    roomsLabel: "Anzahl Räume / Zimmer",
+      "Wählen Sie die gewünschte Leistung – wir fragen nur nach was wirklich relevant ist und schätzen Ihnen unverbindlich eine Preisspanne.",
+    categoryLabel: "Was möchten Sie?",
+    categories: {
+      cleaning: "Reinigung",
+      household: "Haushaltshilfe & Wäsche",
+      sewing: "Nähservice",
+    },
+    cleaning: {
+      variantLabel: "Art der Reinigung",
+      variants: {
+        unterhalt: "Unterhaltsreinigung",
+        end: "Endreinigung / Umzug",
+        airbnb: "Airbnb / Ferienwohnung",
+      },
+      areaLabel: "Fläche (m²)",
+      areaPlaceholder: "z.B. 85",
+      roomsLabel: "Räume / Zimmer",
+      roomsPlaceholder: "z.B. 3.5",
+      extrasLabel: "Zusätzlich",
+      extras: ["Backofen", "Kühlschrank", "Fenster innen", "Storen / Lamellen"],
+      bedsLabel: "Anzahl Betten",
+    },
+    household: {
+      variantLabel: "Art der Hilfe",
+      variants: {
+        umfassend: "Haushaltshilfe (umfassend)",
+        buegeln: "Nur Bügeln & Wäsche",
+      },
+      tasksLabel: "Aufgaben",
+      tasks: ["Einkaufen", "Wäsche waschen", "Bügeln", "Aufräumen", "Pflanzen giessen"],
+      hoursLabel: "Stunden pro Einsatz",
+      shirtsLabel: "Hemden / Blusen",
+      pantsLabel: "Hosen / Röcke",
+      beddingLabel: "Bettwäsche-Sets",
+    },
+    sewing: {
+      variantLabel: "Art",
+      variants: {
+        einfach: "Einfache Reparatur / Änderung",
+        outdoor: "Outdoor / Spezial",
+      },
+      tasksLabel: "Was zu nähen?",
+      tasksEinfach: [
+        "Hose kürzen",
+        "Reissverschluss ersetzen",
+        "Knopf annähen",
+        "Riss flicken",
+        "Vorhang ändern",
+        "Anderes",
+      ],
+      tasksOutdoor: [
+        "Gore-Tex Reparatur",
+        "Daunenjacke",
+        "Outdoorhose",
+        "Schlafsack",
+        "Spezialnaht / Verstärkung",
+        "Anderes",
+      ],
+      countLabel: "Anzahl Stücke",
+      materialLabel: "Material (falls bekannt)",
+      materials: ["Gore-Tex", "Daunen", "Polyester / Nylon", "Anderes / Unsicher"],
+      pickupNote: "Mit kostenlosem Abholservice im Bödeli.",
+    },
     frequencyLabel: "Häufigkeit",
     frequencies: [
       { value: "einmalig", label: "Einmalig" },
       { value: "woechentlich", label: "Wöchentlich" },
+      { value: "alle_2_wochen", label: "Alle 2 Wochen" },
       { value: "monatlich", label: "Monatlich" },
     ],
+    descriptionLabel: "Weitere Details (optional)",
+    descriptionPlaceholder:
+      "z.B. Zugangsdetails, Wünsche, gewünschter Termin …",
     submit: "Preis schätzen lassen",
     submitting: "Berechne …",
     resultLabel: "Ergebnis",
     resultEmpty:
-      "Füllen Sie das Formular aus, um eine unverbindliche Preisspanne zu erhalten.",
+      "Füllen Sie die Angaben aus, um eine unverbindliche Preisspanne zu erhalten.",
     calculating: "Berechne Ihre Schätzung …",
     disclaimer:
       "⚠️ Dies ist ein automatisch generierter Schätzpreis. Die tatsächlichen Kosten können abweichen. Bitte kontaktieren Sie uns für ein verbindliches Angebot.",
     whatsappCta: "Jetzt anfragen via WhatsApp",
-    whatsappIntro:
-      "Hallo PrimaMax, ich interessiere mich für eine Offerte.",
-    serviceSummaryPrefix: "Leistungen",
-    areaSummaryPrefix: "Fläche",
-    roomsSummaryPrefix: "Räume",
-    frequencySummaryPrefix: "Häufigkeit",
-    detailsSummaryPrefix: "Details",
+    whatsappIntro: "Hallo PrimaMax, ich interessiere mich für eine Offerte.",
     estimateSummaryPrefix: "Generierte Schätzung",
   },
   booking: {
     title: "Verfügbarkeit & Buchung",
     subtitle:
       "Wählen Sie Ihren Wunschtermin – wir bestätigen schnellstmöglich. Kurzfristige Aufträge nehmen wir gerne direkt per Telefon oder WhatsApp entgegen.",
+    inquiryOnlyBadge: "Aktuell auf Anfrage",
+    inquiryOnlyTitle: "Termine vergeben wir aktuell persönlich",
+    inquiryOnlyBody:
+      "Bis Ende Mai läuft unsere Online-Direktbuchung noch nicht – wir koordinieren Ihren Termin lieber kurz persönlich, damit alles passt. Schreiben Sie uns auf WhatsApp oder rufen Sie an – wir melden uns sofort zurück.",
+    inquiryOnlyContactCta: "Per Formular anfragen",
     dateLabel: "Datum",
     timeLabel: "Uhrzeit",
     durationLabel: "Voraussichtliche Dauer",
@@ -225,6 +391,79 @@ export const de = {
       "Tipp: Kurzfristige Aufträge gerne direkt per Telefon oder WhatsApp – wir melden uns sofort.",
     selectedSummary: "Ihr Wunschtermin",
     minDateNote: "Online-Buchung ab frühestens 24 Stunden im Voraus möglich.",
+  },
+  trust: {
+    items: [
+      {
+        title: "Lokal verwurzelt",
+        body: "Wir leben und arbeiten auf dem Bödeli – mit Anfahrt aus Matten direkt zu Ihnen.",
+        icon: "📍",
+      },
+      {
+        title: "Versichert & vertrauenswürdig",
+        body: "Diskreter Umgang mit Schlüsseln und privaten Räumen, fairer Umgang mit unseren Kundinnen und Kunden.",
+        icon: "🔒",
+      },
+      {
+        title: "Abnahmegarantie",
+        body: "Bei Endreinigungen kommen wir kostenlos nochmals vorbei, falls die Verwaltung nicht zufrieden ist.",
+        icon: "✅",
+      },
+      {
+        title: "Faire, transparente Preise",
+        body: "Stundensätze ab CHF 35/h. Anfahrt im Bödeli inklusive – ohne versteckte Kosten.",
+        icon: "💰",
+      },
+      {
+        title: "Schnelle Antwort",
+        body: "Anfragen beantworten wir in der Regel innert weniger Stunden – meist schon am gleichen Tag.",
+        icon: "⚡",
+      },
+      {
+        title: "Persönlicher Kontakt",
+        body: "Sie sprechen direkt mit uns – nicht mit einem Call-Center. Per Telefon, WhatsApp oder Formular.",
+        icon: "💬",
+      },
+    ],
+  },
+  faq: {
+    title: "Häufige Fragen",
+    subtitle:
+      "Antworten auf die häufigsten Fragen rund um unsere Leistungen auf dem Bödeli.",
+    items: [
+      {
+        q: "Wie schnell kann ich einen Termin bekommen?",
+        a: "Für die meisten Aufträge können wir innerhalb von 1–3 Tagen kommen. Bei kurzfristigen Anliegen rufen Sie uns am besten direkt an oder schreiben uns auf WhatsApp – wir versuchen, eine Lösung zu finden.",
+      },
+      {
+        q: "Was kostet eine Endreinigung mit Abnahmegarantie?",
+        a: "Endreinigungen rechnen wir nach Aufwand pauschal ab. Eine 3.5-Zimmer-Wohnung im Bödeli liegt typischerweise bei CHF 400–600 inkl. Backofen, Fenster und Storen. Ein verbindliches Angebot machen wir nach kurzer Besichtigung oder nach Ihren Angaben.",
+      },
+      {
+        q: "Kommt die Anfahrt extra dazu?",
+        a: "Auf dem Bödeli (Interlaken, Matten, Unterseen, Wilderswil, Bönigen, Ringgenberg) ist die Anfahrt inklusive, sofern die Mindestdauer eingehalten wird. Bei kürzeren Einsätzen verrechnen wir CHF 40 Anfahrtspauschale, ausserhalb des Bödelis CHF 0.70/km gemäss Schweizer Spesenansatz.",
+      },
+      {
+        q: "Bringen Sie Reinigungsmaterial mit?",
+        a: "Ja, im Stundensatz sind übliche Reinigungstücher und Grundprodukte enthalten. Falls Sie eigene Produkte bevorzugen (z.B. wegen Allergien), verwenden wir gerne diese.",
+      },
+      {
+        q: "Wie funktioniert der Nähservice mit Abholung?",
+        a: "Wir holen das Stück bei Ihnen im Bödeli kostenlos ab, reparieren oder ändern es und bringen es Ihnen wieder vorbei. Auch Outdoor-Reparaturen wie Gore-Tex, Daunenjacken oder Schlafsäcke übernehmen wir.",
+      },
+      {
+        q: "Kann ich eine regelmässige Reinigung buchen?",
+        a: "Ja – wöchentlich, alle zwei Wochen oder monatlich. Bei regelmässigen Einsätzen gibt es feste Termine und wir kennen Ihre Wünsche.",
+      },
+      {
+        q: "Reinigen Sie auch Ferienwohnungen / Airbnb?",
+        a: "Sehr gerne. Wechselreinigung zwischen Gästen, frische Bettwäsche, Hotelstandard – auch kurzfristig. Wir arbeiten mit mehreren Vermietern auf dem Bödeli zusammen.",
+      },
+      {
+        q: "Wie kann ich bezahlen?",
+        a: "Bequem per Banküberweisung mit der Rechnung (IBAN + QR-Rechnung) oder direkt per Twint an unsere Geschäftsnummer. Zahlungsfrist sind 30 Tage.",
+      },
+    ],
   },
   contact: {
     title: "Kontakt",
@@ -264,6 +503,8 @@ export const de = {
     regionList:
       "Interlaken · Matten · Unterseen · Wilderswil · Bönigen · Ringgenberg",
     whatsappCta: "Direkt per WhatsApp schreiben",
+    mapTitle: "Unser Einsatzgebiet",
+    mapOpenInGoogle: "In Google Maps öffnen",
   },
   footer: {
     description:
@@ -275,6 +516,73 @@ export const de = {
     madeWith: "Erstellt mit Sorgfalt auf dem Bödeli.",
     credit: "Design & Code",
     creditBrand: "RW WebSolutions",
+    legalLinks: "Rechtliches",
+    impressum: "Impressum",
+    privacy: "Datenschutz",
+  },
+  legal: {
+    impressumTitle: "Impressum",
+    providerLabel: "Anbieter",
+    contactLabel: "Kontakt",
+    responsibleLabel: "Verantwortlich für den Inhalt",
+    responsibleBody:
+      "Die Inhaberinnen / Inhaber von PrimaMax sind verantwortlich für den Inhalt dieser Website.",
+    disclaimerLabel: "Haftungsausschluss",
+    disclaimerBody:
+      "Die Inhalte dieser Website werden mit grösster Sorgfalt erstellt. Für Richtigkeit, Vollständigkeit und Aktualität der Informationen kann jedoch keine Gewähr übernommen werden. Haftungsansprüche gegen die Betreiber für Schäden materieller oder ideeller Art, die durch die Nutzung der Website entstehen, sind ausgeschlossen, sofern kein vorsätzliches oder grob fahrlässiges Verschulden vorliegt.",
+    copyrightLabel: "Urheberrecht",
+    copyrightBody:
+      "Alle Inhalte (Texte, Bilder, Grafiken) auf dieser Website sind urheberrechtlich geschützt. Eine Vervielfältigung oder Verwendung in anderen Medien ohne ausdrückliche Zustimmung nicht gestattet.",
+    privacyTitle: "Datenschutzerklärung",
+    privacyLastUpdated: "Stand",
+    privacySections: [
+      {
+        title: "Allgemeines",
+        body: [
+          'PrimaMax (nachfolgend „wir") nimmt den Schutz Ihrer persönlichen Daten ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend dem schweizerischen Datenschutzgesetz (DSG) sowie – soweit anwendbar – der EU-Datenschutz-Grundverordnung (DSGVO).',
+          "Diese Erklärung beschreibt, welche Daten wir auf dieser Website erheben und wie wir sie verwenden.",
+        ],
+      },
+      {
+        title: "Kontaktformular und Buchungsanfragen",
+        body: [
+          "Wenn Sie uns über das Kontakt- oder Buchungsformular eine Anfrage senden, werden Ihre Angaben (Name, Kontaktdaten, Inhalt der Anfrage) zum Zweck der Bearbeitung Ihrer Anfrage gespeichert. Diese Daten werden nicht ohne Ihre Einwilligung weitergegeben.",
+          "Die Übermittlung dieser Formulare erfolgt aktuell über den Dienstleister Formspree (Formspree, Inc., USA). Formspree leitet die Nachricht an unsere E-Mail-Adresse weiter.",
+        ],
+      },
+      {
+        title: "KI-Preisrechner und Rechnungsassistent",
+        body: [
+          "Beim Einsatz des KI-Preisrechners werden Ihre Eingaben an die Anthropic-API (Anthropic, USA) übermittelt, um eine Schätzung zu erzeugen. Es findet kein dauerhaftes Speichern dieser Eingaben durch uns statt; es gelten die Datenschutzbestimmungen von Anthropic.",
+        ],
+      },
+      {
+        title: "Hosting (Vercel)",
+        body: [
+          "Diese Website wird auf der Plattform Vercel (Vercel Inc., USA) gehostet. Beim Aufruf werden Server-Logdaten (z.B. IP-Adresse, Datum, abgerufene URL, Browsertyp) verarbeitet, soweit dies für den sicheren Betrieb der Website erforderlich ist.",
+        ],
+      },
+      {
+        title: "Eingebundene Karte (Google Maps)",
+        body: [
+          "Auf der Kontaktseite ist eine Karte von Google Maps eingebunden. Beim Laden der Karte werden Daten (u.a. Ihre IP-Adresse) an Google übertragen. Mehr dazu in den Datenschutzbestimmungen von Google.",
+        ],
+      },
+      {
+        title: "Analyse",
+        body: [
+          "Wir setzen ein datenschutzfreundliches Analysewerkzeug von Vercel (Vercel Web Analytics) ein, das ohne Cookies und ohne Erfassung persönlich identifizierender Informationen funktioniert. Es werden lediglich aggregierte Statistiken zu Seitenaufrufen erfasst.",
+        ],
+      },
+      {
+        title: "Ihre Rechte",
+        body: [
+          "Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung Ihrer Daten. Wenden Sie sich dazu an die untenstehende Kontaktadresse.",
+        ],
+      },
+    ],
+    privacyContactLabel: "Kontakt für Datenschutzfragen",
+    privacyContactBody: "Bei Fragen zum Datenschutz erreichen Sie uns unter:",
   },
 };
 
@@ -286,8 +594,10 @@ export const en: Dict = {
     about: "About us",
     booking: "Booking",
     calculator: "Price calculator",
+    faq: "FAQ",
     cta: "Inquire",
     comingSoon: "soon",
+    beta: "Beta",
     openMenu: "Open menu",
   },
   hero: {
@@ -380,96 +690,259 @@ export const en: Dict = {
   pricing: {
     title: "Transparent prices",
     subtitle:
-      "Fair conditions, no hidden costs. All prices include travel within the Bödeli. Assignments outside the Bödeli on request.",
-    headers: { service: "Service", price: "Price", min: "Minimum duration" },
+      "Fair conditions, no hidden costs. Hourly rates include materials such as cleaning cloths and basic products.",
+    priceLabel: "Price",
+    minLabel: "Minimum duration",
+    includesLabel: "Included in the hourly rate",
+    pickupLabel: "Pickup service",
     comingSoon: "Coming soon",
-    rows: [
-      { service: "Cleaning", price: "from CHF 45/h", min: "min. 2 h" },
+    items: [
+      {
+        service: "Cleaning",
+        shortDesc:
+          "Apartment, house and office cleaning with attention to detail.",
+        includes: [
+          "Vacuuming, mopping, dusting",
+          "Kitchen: counters, sink, cabinet fronts",
+          "Bath & WC: sanitary, grout, mirrors",
+          "Empty bins, disinfect surfaces",
+        ],
+        price: "from CHF 45/h",
+        min: "min. 2 h",
+      },
+      {
+        service: "Move-out cleaning with handover guarantee",
+        shortDesc:
+          "Complete handover-ready cleaning – clean to the corners, handover guaranteed.",
+        includes: [
+          "Deep clean of kitchen incl. oven, fridge",
+          "Bathroom: limescale, grout, fittings",
+          "Windows inside + frames + blinds",
+          "Floors, walls, radiators, vents",
+          "Free re-clean if landlord complains",
+        ],
+        price: "Flat rate on request",
+        min: "depends on property",
+      },
       {
         service: "Airbnb / holiday flat turnover cleaning",
+        shortDesc:
+          "Hotel standard between guest changeovers – fresh, fast, reliable.",
+        includes: [
+          "Full apartment cleaning",
+          "Change bed linens & towels",
+          "Sanitary-clean kitchen & bathroom",
+          "Waste sorting & restocking consumables",
+          "Photo-check for the host on request",
+        ],
         price: "from CHF 50/h",
         min: "Flat rate on request",
       },
-      { service: "Household help", price: "from CHF 40/h", min: "min. 2 h" },
+      {
+        service: "Household help",
+        shortDesc: "Daily relief – we take care of the surrounding tasks.",
+        includes: [
+          "Laundry: wash, hang, fold",
+          "Ironing & simple sewing",
+          "Shopping & errands within the Bödeli",
+          "Tidying & keeping order",
+          "Plant watering during your absence",
+        ],
+        price: "from CHF 40/h",
+        min: "min. 2 h",
+      },
       {
         service: "Sewing service (basic)",
+        shortDesc:
+          "Repairs, alterations and small custom items.",
+        includes: [
+          "Shorten trousers & skirts",
+          "Replace zippers",
+          "Sew on buttons, mend tears",
+          "Curtains & tablecloths",
+        ],
         price: "from CHF 35/h",
         min: "min. 1 h",
+        pickup: "Free pickup service within the Bödeli",
       },
       {
         service: "Sewing service (outdoor / specialty)",
+        shortDesc:
+          "Gore-Tex, down, technical fabrics – with the right materials and know-how.",
+        includes: [
+          "Gore-Tex repair with seam tape",
+          "Down jackets & sleeping bags",
+          "Outdoor trousers, gaiters, backpacks",
+          "Specialty seams & reinforcements",
+        ],
         price: "from CHF 45/h",
         min: "min. 1 h",
+        pickup: "Free pickup service within the Bödeli",
       },
       {
         service: "Garden / surroundings",
+        shortDesc: "Around the house and garden – clean and well-kept.",
+        includes: [
+          "Lawn mowing & edges",
+          "Hedge trimming",
+          "Weeding, flowerbed care",
+          "Leaf removal",
+        ],
         price: "from CHF 50/h",
         min: "min. 2 h",
         comingSoon: true as const,
       },
       {
         service: "Painting work",
+        shortDesc:
+          "Fresh paint indoors – properly covered and properly finished.",
+        includes: [
+          "Wall painting / wallpapering",
+          "Whitening ceilings",
+          "Doors & frames",
+          "Preparation & furniture protection",
+        ],
         price: "from CHF 55/h",
         min: "min. 3 h",
         comingSoon: true as const,
       },
       {
         service: "Stairwell cleaning",
+        shortDesc: "Regular or one-off cleaning of stairwells.",
+        includes: [
+          "Stairs & railings",
+          "Entrance & mailboxes",
+          "Lift & buttons disinfected",
+          "Stairwell windows",
+        ],
         price: "Flat rate per property",
-        min: "—",
+        min: "depends on property",
         comingSoon: true as const,
       },
     ],
-    footnote:
-      "Travel within the Bödeli (Interlaken, Matten, Unterseen, Wilderswil, Bönigen, Ringgenberg) is included. Outside on request.",
+    travelTitle: "Travel – fair and transparent",
+    travelRules: [
+      {
+        label: "Within the Bödeli, minimum duration met",
+        value: "Travel included",
+        positive: true as const,
+      },
+      {
+        label: "Within the Bödeli, less than minimum",
+        value: "CHF 40 travel flat rate",
+      },
+      {
+        label: "Outside the Bödeli",
+        value: "CHF 0.70/km (round trip)",
+      },
+      {
+        label: "Sewing service",
+        value: "Free pickup service within the Bödeli",
+        positive: true as const,
+      },
+    ],
+    travelNote:
+      "Bödeli covers: Interlaken, Matten, Unterseen, Wilderswil, Bönigen, Ringgenberg. The CHF 0.70/km rate matches the official Swiss expense rate.",
   },
   calculator: {
     title: "AI price calculator",
-    comingSoonBadge: "Coming soon",
+    comingSoonBadge: "Beta version",
+    betaNote:
+      "We're currently testing the price calculator. The estimate serves as a rough orientation – we'll send a binding offer after a quick chat.",
     subtitle:
-      "Briefly describe what you need – we'll give you a non-binding price range. Fast, simple and transparent.",
-    descriptionLabel: "What do you need?",
-    descriptionPlaceholder:
-      "e.g. move-out cleaning of a 3.5-room apartment in Matten, with oven and windows …",
-    servicesLabel: "Services",
-    services: [
-      "Cleaning",
-      "Move-out cleaning",
-      "Airbnb / holiday flat",
-      "Household help",
-      "Ironing / laundry",
-      "Sewing service (basic)",
-      "Sewing service (outdoor)",
-    ],
-    areaLabel: "Area (m²)",
-    roomsLabel: "Number of rooms",
+      "Pick the service you need – we only ask what's relevant and give you a non-binding price range.",
+    categoryLabel: "What do you need?",
+    categories: {
+      cleaning: "Cleaning",
+      household: "Household & laundry",
+      sewing: "Sewing service",
+    },
+    cleaning: {
+      variantLabel: "Type of cleaning",
+      variants: {
+        unterhalt: "Maintenance cleaning",
+        end: "Move-out / move-in cleaning",
+        airbnb: "Airbnb / holiday flat",
+      },
+      areaLabel: "Area (m²)",
+      areaPlaceholder: "e.g. 85",
+      roomsLabel: "Rooms",
+      roomsPlaceholder: "e.g. 3.5",
+      extrasLabel: "Additional",
+      extras: ["Oven", "Fridge", "Windows inside", "Blinds / shutters"],
+      bedsLabel: "Number of beds",
+    },
+    household: {
+      variantLabel: "Type of help",
+      variants: {
+        umfassend: "Household help (full)",
+        buegeln: "Ironing & laundry only",
+      },
+      tasksLabel: "Tasks",
+      tasks: ["Shopping", "Laundry wash", "Ironing", "Tidying", "Plant watering"],
+      hoursLabel: "Hours per visit",
+      shirtsLabel: "Shirts / blouses",
+      pantsLabel: "Trousers / skirts",
+      beddingLabel: "Bedding sets",
+    },
+    sewing: {
+      variantLabel: "Type",
+      variants: {
+        einfach: "Basic repair / alteration",
+        outdoor: "Outdoor / specialty",
+      },
+      tasksLabel: "What needs sewing?",
+      tasksEinfach: [
+        "Shorten trousers",
+        "Replace zipper",
+        "Sew on buttons",
+        "Mend tears",
+        "Adjust curtain",
+        "Other",
+      ],
+      tasksOutdoor: [
+        "Gore-Tex repair",
+        "Down jacket",
+        "Outdoor trousers",
+        "Sleeping bag",
+        "Specialty seam / reinforcement",
+        "Other",
+      ],
+      countLabel: "Number of pieces",
+      materialLabel: "Material (if known)",
+      materials: ["Gore-Tex", "Down", "Polyester / nylon", "Other / not sure"],
+      pickupNote: "Includes free pickup service within the Bödeli.",
+    },
     frequencyLabel: "Frequency",
     frequencies: [
       { value: "einmalig", label: "One-off" },
       { value: "woechentlich", label: "Weekly" },
+      { value: "alle_2_wochen", label: "Every 2 weeks" },
       { value: "monatlich", label: "Monthly" },
     ],
+    descriptionLabel: "Other details (optional)",
+    descriptionPlaceholder:
+      "e.g. access details, preferences, preferred date …",
     submit: "Get price estimate",
     submitting: "Calculating …",
     resultLabel: "Result",
-    resultEmpty:
-      "Fill in the form to get a non-binding price range.",
+    resultEmpty: "Fill in the details to get a non-binding price range.",
     calculating: "Calculating your estimate …",
     disclaimer:
       "⚠️ This is an automatically generated estimate. Actual costs may vary. Please contact us for a binding offer.",
     whatsappCta: "Inquire now via WhatsApp",
     whatsappIntro: "Hello PrimaMax, I'm interested in a quote.",
-    serviceSummaryPrefix: "Services",
-    areaSummaryPrefix: "Area",
-    roomsSummaryPrefix: "Rooms",
-    frequencySummaryPrefix: "Frequency",
-    detailsSummaryPrefix: "Details",
     estimateSummaryPrefix: "Generated estimate",
   },
   booking: {
     title: "Availability & booking",
     subtitle:
       "Pick your preferred date and time – we'll confirm as soon as possible. Short-notice requests are best handled directly by phone or WhatsApp.",
+    inquiryOnlyBadge: "By inquiry only",
+    inquiryOnlyTitle: "We currently arrange appointments personally",
+    inquiryOnlyBody:
+      "Until the end of May our direct online booking isn't live yet – we'd rather coordinate your appointment briefly in person so everything fits. Message us on WhatsApp or give us a call – we'll get back to you right away.",
+    inquiryOnlyContactCta: "Send a request via form",
     dateLabel: "Date",
     timeLabel: "Time",
     durationLabel: "Estimated duration",
@@ -501,6 +974,79 @@ export const en: Dict = {
       "Tip: For short-notice requests, please reach us directly by phone or WhatsApp – we'll get back right away.",
     selectedSummary: "Your selected appointment",
     minDateNote: "Online booking is possible from 24 hours in advance.",
+  },
+  trust: {
+    items: [
+      {
+        title: "Locally rooted",
+        body: "We live and work in the Bödeli – traveling from Matten directly to you.",
+        icon: "📍",
+      },
+      {
+        title: "Insured & trustworthy",
+        body: "Discreet handling of keys and private spaces, fair treatment of our customers.",
+        icon: "🔒",
+      },
+      {
+        title: "Handover guarantee",
+        body: "For move-out cleaning we'll come back free of charge if the property manager isn't satisfied.",
+        icon: "✅",
+      },
+      {
+        title: "Fair, transparent prices",
+        body: "Hourly rates from CHF 35/h. Travel within the Bödeli included – no hidden costs.",
+        icon: "💰",
+      },
+      {
+        title: "Fast response",
+        body: "We usually respond to inquiries within a few hours – often the same day.",
+        icon: "⚡",
+      },
+      {
+        title: "Personal contact",
+        body: "You speak directly with us – not a call center. By phone, WhatsApp or form.",
+        icon: "💬",
+      },
+    ],
+  },
+  faq: {
+    title: "Frequently asked questions",
+    subtitle:
+      "Answers to the most common questions about our services in the Bödeli.",
+    items: [
+      {
+        q: "How quickly can I get an appointment?",
+        a: "For most assignments we can come within 1–3 days. For short-notice requests please call or message us on WhatsApp directly – we'll try to find a solution.",
+      },
+      {
+        q: "How much does a move-out cleaning with handover guarantee cost?",
+        a: "We charge move-out cleanings as a flat rate based on effort. A 3.5-room apartment in the Bödeli typically costs CHF 400–600 including oven, windows and blinds. We'll provide a binding offer after a brief visit or based on your details.",
+      },
+      {
+        q: "Is travel charged extra?",
+        a: "Within the Bödeli (Interlaken, Matten, Unterseen, Wilderswil, Bönigen, Ringgenberg), travel is included as long as the minimum duration is met. For shorter visits we charge a CHF 40 flat rate, outside the Bödeli CHF 0.70/km according to the Swiss expense rate.",
+      },
+      {
+        q: "Do you bring cleaning supplies?",
+        a: "Yes, the hourly rate includes standard cleaning cloths and basic products. If you prefer your own products (e.g. for allergies), we'll happily use those.",
+      },
+      {
+        q: "How does the sewing pickup service work?",
+        a: "We pick up the item from your address in the Bödeli free of charge, repair or alter it, and bring it back to you. We also handle outdoor repairs like Gore-Tex, down jackets or sleeping bags.",
+      },
+      {
+        q: "Can I book a recurring cleaning?",
+        a: "Yes – weekly, every two weeks, or monthly. With recurring assignments we set fixed slots and learn your preferences.",
+      },
+      {
+        q: "Do you also clean holiday flats / Airbnb?",
+        a: "Absolutely. Turnover cleaning between guests, fresh linens, hotel standard – also at short notice. We work with several hosts in the Bödeli.",
+      },
+      {
+        q: "How can I pay?",
+        a: "Easily by bank transfer using the invoice (IBAN + QR-bill) or directly via Twint to our business number. Payment term is 30 days.",
+      },
+    ],
   },
   contact: {
     title: "Contact",
@@ -540,6 +1086,8 @@ export const en: Dict = {
     regionList:
       "Interlaken · Matten · Unterseen · Wilderswil · Bönigen · Ringgenberg",
     whatsappCta: "Message us directly on WhatsApp",
+    mapTitle: "Our service area",
+    mapOpenInGoogle: "Open in Google Maps",
   },
   footer: {
     description:
@@ -551,6 +1099,73 @@ export const en: Dict = {
     madeWith: "Made with care on the Bödeli.",
     credit: "Design & Code",
     creditBrand: "RW WebSolutions",
+    legalLinks: "Legal",
+    impressum: "Imprint",
+    privacy: "Privacy",
+  },
+  legal: {
+    impressumTitle: "Imprint",
+    providerLabel: "Provider",
+    contactLabel: "Contact",
+    responsibleLabel: "Responsible for content",
+    responsibleBody:
+      "The owners of PrimaMax are responsible for the content of this website.",
+    disclaimerLabel: "Disclaimer",
+    disclaimerBody:
+      "The content of this website is created with great care. However, no guarantee is given for the accuracy, completeness or timeliness of the information. Liability claims against the operators for damages of a material or immaterial nature arising from the use of the website are excluded, provided there is no intentional or grossly negligent fault.",
+    copyrightLabel: "Copyright",
+    copyrightBody:
+      "All content (texts, images, graphics) on this website is protected by copyright. Reproduction or use in other media is not permitted without express consent.",
+    privacyTitle: "Privacy policy",
+    privacyLastUpdated: "Last updated",
+    privacySections: [
+      {
+        title: "General",
+        body: [
+          "PrimaMax (\"we\") takes the protection of your personal data seriously. We treat your personal data confidentially and in accordance with the Swiss Data Protection Act (DSG) and – where applicable – the EU General Data Protection Regulation (GDPR).",
+          "This statement describes what data we collect on this website and how we use it.",
+        ],
+      },
+      {
+        title: "Contact form and booking inquiries",
+        body: [
+          "When you send us an inquiry via the contact or booking form, your details (name, contact details, content of the inquiry) are stored for the purpose of processing your request. This data is not passed on without your consent.",
+          "Submission of these forms is currently handled by the service provider Formspree (Formspree, Inc., USA). Formspree forwards the message to our email address.",
+        ],
+      },
+      {
+        title: "AI price calculator and invoice assistant",
+        body: [
+          "When using the AI price calculator, your inputs are transmitted to the Anthropic API (Anthropic, USA) to generate an estimate. We do not permanently store these inputs; Anthropic's data protection regulations apply.",
+        ],
+      },
+      {
+        title: "Hosting (Vercel)",
+        body: [
+          "This website is hosted on the Vercel platform (Vercel Inc., USA). When the site is accessed, server log data (e.g. IP address, date, accessed URL, browser type) is processed insofar as this is necessary for the secure operation of the website.",
+        ],
+      },
+      {
+        title: "Embedded map (Google Maps)",
+        body: [
+          "A Google Maps map is embedded on the contact page. When the map is loaded, data (including your IP address) is transmitted to Google. More information in Google's privacy policy.",
+        ],
+      },
+      {
+        title: "Analytics",
+        body: [
+          "We use a privacy-friendly analytics tool from Vercel (Vercel Web Analytics) that works without cookies and without recording personally identifiable information. Only aggregated statistics about page views are collected.",
+        ],
+      },
+      {
+        title: "Your rights",
+        body: [
+          "You have the right to information, correction, deletion and restriction of the processing of your data. To exercise these rights, please contact us using the contact address below.",
+        ],
+      },
+    ],
+    privacyContactLabel: "Contact for privacy questions",
+    privacyContactBody: "For questions about data protection, you can reach us at:",
   },
 };
 

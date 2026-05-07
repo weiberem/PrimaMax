@@ -1,8 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import dynamic from "next/dynamic";
 import WhatsAppButton, { WHATSAPP_PHONE_PLACEHOLDER } from "./WhatsAppButton";
 import { useLang } from "../i18n/LanguageProvider";
+
+const ServiceAreaMap = dynamic(() => import("./ServiceAreaMap"), {
+  ssr: false,
+  loading: () => (
+    <div className="flex aspect-[4/3] w-full items-center justify-center bg-slate-50 text-sm text-slate-500">
+      Karte wird geladen …
+    </div>
+  ),
+});
 
 // TODO: Replace with your real Formspree endpoint, e.g. https://formspree.io/f/abcdwxyz
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/your-form-id";
@@ -14,6 +24,35 @@ export default function Contact() {
   const { t } = useLang();
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  // Preselect service from hash (#contact?service=...)
+  useEffect(() => {
+    function applyHash() {
+      const hash = window.location.hash;
+      if (!hash.startsWith("#contact")) return;
+      const q = hash.split("?")[1];
+      if (!q) return;
+      const params = new URLSearchParams(q);
+      const svc = params.get("service");
+      if (!svc || !formRef.current) return;
+      const select = formRef.current.querySelector<HTMLSelectElement>(
+        'select[name="service"]'
+      );
+      if (select && Array.from(select.options).some((o) => o.value === svc)) {
+        select.value = svc;
+      }
+      const message = formRef.current.querySelector<HTMLTextAreaElement>(
+        'textarea[name="message"]'
+      );
+      if (message && !message.value) {
+        message.focus();
+      }
+    }
+    applyHash();
+    window.addEventListener("hashchange", applyHash);
+    return () => window.removeEventListener("hashchange", applyHash);
+  }, []);
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -52,6 +91,7 @@ export default function Contact() {
 
         <div className="mt-10 grid gap-8 lg:grid-cols-5 items-start">
           <form
+            ref={formRef}
             onSubmit={onSubmit}
             className="reveal lg:col-span-3 rounded-2xl bg-white p-6 sm:p-8 shadow-sm border border-slate-200 space-y-5"
           >
@@ -200,14 +240,46 @@ export default function Contact() {
                     {t.contact.regionLabel}
                   </div>
                   <div className="text-slate-800 font-medium">
-                    {t.contact.regionValue}
+                    Aenderbergstrasse 19
                   </div>
-                  <div className="text-xs text-slate-500">{t.contact.regionList}</div>
+                  <div className="text-slate-700">
+                    3800 Matten bei Interlaken
+                  </div>
+                  <div className="mt-1 text-xs text-slate-500">{t.contact.regionList}</div>
                 </div>
               </div>
             </div>
 
             <WhatsAppButton className="w-full" label={t.contact.whatsappCta} />
+
+            <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+              <div className="flex items-center justify-between gap-2 border-b border-slate-100 px-4 py-3">
+                <div className="flex items-center gap-2">
+                  <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary-100 text-primary-700">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z" />
+                      <circle cx="12" cy="10" r="3" />
+                    </svg>
+                  </span>
+                  <span className="text-sm font-semibold text-slate-800">
+                    {t.contact.mapTitle}
+                  </span>
+                </div>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Aenderbergstrasse+19,+3800+Matten+bei+Interlaken"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-medium text-primary-700 hover:underline"
+                >
+                  {t.contact.mapOpenInGoogle} ↗
+                </a>
+              </div>
+              <ServiceAreaMap />
+              <div className="border-t border-slate-100 px-4 py-2 text-xs text-slate-500">
+                <span className="mr-1 inline-block h-2 w-2 rounded-sm bg-primary-500/30 ring-1 ring-primary-500" />
+                Eingezeichnet: unser Einsatzgebiet im Bödeli
+              </div>
+            </div>
           </aside>
         </div>
       </div>

@@ -43,11 +43,6 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="#about" className="hover:text-white">
-                {t.nav.about}
-              </a>
-            </li>
-            <li>
               <a href="#booking" className="hover:text-white">
                 {t.nav.booking}
               </a>
@@ -67,9 +62,29 @@ export default function Footer() {
           {/* TODO: Replace with real Impressum / legal information */}
           <div className="mt-3 text-sm text-primary-100/85 leading-relaxed">
             PrimaMax<br />
-            Bödeli, Schweiz<br />
-            E-Mail: info@primamax.ch<br />
-            <span className="text-primary-200/70">{t.footer.legalText}</span>
+            Aenderbergstrasse 19<br />
+            3800 Matten bei Interlaken<br />
+            E-Mail:{" "}
+            <a
+              href="mailto:info@primamax.ch"
+              className="hover:text-white"
+            >
+              info@primamax.ch
+            </a>
+          </div>
+          <div className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-sm">
+            <a
+              href="/impressum"
+              className="text-primary-100/90 hover:text-white"
+            >
+              {t.footer.impressum}
+            </a>
+            <a
+              href="/datenschutz"
+              className="text-primary-100/90 hover:text-white"
+            >
+              {t.footer.privacy}
+            </a>
           </div>
         </div>
       </div>

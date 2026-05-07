@@ -14,6 +14,14 @@ const MIN_HOUR = 7;
 const MAX_HOUR = 19;
 const SHORT_NOTICE_HOURS = 24;
 
+// Until this date (exclusive), online direct booking is disabled and the section
+// shows an "inquiry only" card. Switches to the full booking form automatically afterwards.
+const DIRECT_BOOKING_AVAILABLE_FROM = new Date("2026-06-01T00:00:00");
+
+function isDirectBookingActive(): boolean {
+  return Date.now() >= DIRECT_BOOKING_AVAILABLE_FROM.getTime();
+}
+
 type Status = "idle" | "submitting" | "success" | "error";
 
 function pad(n: number): string {
@@ -44,6 +52,7 @@ function isShortNotice(date: string, time: string): boolean {
 export default function Booking() {
   const { t, lang } = useLang();
   const minDate = todayPlus(1);
+  const directBookingActive = isDirectBookingActive();
 
   const [date, setDate] = useState(todayPlus(2));
   const [time, setTime] = useState("09:00");
@@ -108,9 +117,13 @@ export default function Booking() {
     notes,
   ]);
 
+  const inquiryWhatsappMessage =
+    lang === "de"
+      ? "Hallo PrimaMax, ich möchte gerne einen Termin anfragen."
+      : "Hello PrimaMax, I'd like to request an appointment.";
   const whatsappHref = buildWhatsAppLink(
     WHATSAPP_PHONE_PLACEHOLDER,
-    whatsappMessage
+    directBookingActive ? whatsappMessage : inquiryWhatsappMessage
   );
   const callHref = `tel:${WHATSAPP_PHONE_PLACEHOLDER.replace(/\s/g, "")}`;
 
@@ -156,8 +169,21 @@ export default function Booking() {
         </div>
 
         <div className="mt-8 grid gap-6 lg:grid-cols-5">
-          {/* Booking form */}
+          {/* Booking form OR inquiry-only card */}
           <div className="reveal lg:col-span-3">
+            {!directBookingActive ? (
+              <InquiryOnlyCard
+                badge={t.booking.inquiryOnlyBadge}
+                title={t.booking.inquiryOnlyTitle}
+                body={t.booking.inquiryOnlyBody}
+                callHref={callHref}
+                callLabel={t.booking.callCta}
+                whatsappHref={whatsappHref}
+                whatsappLabel={t.booking.whatsappCta}
+                contactLabel={t.booking.inquiryOnlyContactCta}
+                phone={WHATSAPP_PHONE_PLACEHOLDER}
+              />
+            ) : (
             <form
               onSubmit={onSubmit}
               className="rounded-2xl bg-white p-5 shadow-sm border border-slate-200 sm:p-6"
@@ -344,6 +370,7 @@ export default function Booking() {
                 </>
               )}
             </form>
+            )}
           </div>
 
           {/* Side panel */}
@@ -446,6 +473,72 @@ function ShortNoticeCard({
         </a>
       </div>
       <div className="mt-3 text-xs text-amber-900/70">{phone}</div>
+    </div>
+  );
+}
+
+function InquiryOnlyCard({
+  title,
+  body,
+  badge,
+  callHref,
+  callLabel,
+  whatsappHref,
+  whatsappLabel,
+  contactLabel,
+  phone,
+}: {
+  title: string;
+  body: string;
+  badge: string;
+  callHref: string;
+  callLabel: string;
+  whatsappHref: string;
+  whatsappLabel: string;
+  contactLabel: string;
+  phone: string;
+}) {
+  return (
+    <div className="rounded-2xl border border-primary-200 bg-gradient-to-br from-primary-50 via-white to-white p-6 shadow-sm sm:p-8">
+      <span className="inline-flex items-center gap-1.5 rounded-full bg-primary-100 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide text-primary-800">
+        <span aria-hidden>✨</span>
+        {badge}
+      </span>
+      <h3 className="mt-4 text-xl font-semibold text-slate-900 sm:text-2xl">
+        {title}
+      </h3>
+      <p className="mt-3 text-sm leading-relaxed text-slate-700 sm:text-base">
+        {body}
+      </p>
+      <div className="mt-6 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
+        <a
+          href={whatsappHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center gap-2 rounded-full bg-whatsapp px-5 py-3 text-sm font-medium text-white shadow-sm hover:brightness-110"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+            <path d="M19.05 4.91A10 10 0 0 0 4.1 18.36L3 22l3.74-1.07A10 10 0 1 0 19.05 4.9z" />
+          </svg>
+          {whatsappLabel}
+        </a>
+        <a
+          href={callHref}
+          className="inline-flex items-center justify-center gap-2 rounded-full bg-primary-600 px-5 py-3 text-sm font-medium text-white shadow-sm hover:bg-primary-700"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M22 16.92V21a1 1 0 0 1-1.11 1A19 19 0 0 1 2 4.11 1 1 0 0 1 3 3h4.09a1 1 0 0 1 1 .75l1 4a1 1 0 0 1-.27 1L7.21 10.79a16 16 0 0 0 6 6l2-2.55a1 1 0 0 1 1-.27l4 1a1 1 0 0 1 .79 1z" />
+          </svg>
+          {callLabel}
+        </a>
+        <a
+          href="#contact"
+          className="inline-flex items-center justify-center gap-2 rounded-full border border-primary-300 bg-white px-5 py-3 text-sm font-medium text-primary-700 hover:bg-primary-50"
+        >
+          {contactLabel}
+        </a>
+      </div>
+      <div className="mt-4 text-xs text-slate-500">{phone}</div>
     </div>
   );
 }

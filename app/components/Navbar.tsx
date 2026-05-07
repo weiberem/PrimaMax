@@ -8,13 +8,18 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
-  const links: { href: string; label: string; comingSoon?: boolean }[] = [
+  const links: {
+    href: string;
+    label: string;
+    comingSoon?: boolean;
+    beta?: boolean;
+  }[] = [
     { href: "#services", label: t.nav.services },
     { href: "#pricing", label: t.nav.pricing },
+    { href: "#faq", label: t.nav.faq },
     { href: "#contact", label: t.nav.contact },
-    { href: "#about", label: t.nav.about },
     { href: "#booking", label: t.nav.booking },
-    { href: "#calculator", label: t.nav.calculator, comingSoon: true },
+    { href: "#calculator", label: t.nav.calculator, beta: true },
   ];
 
   useEffect(() => {
@@ -53,6 +58,11 @@ export default function Navbar() {
               {l.comingSoon && (
                 <span className="rounded-full bg-slate-100 px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wide text-slate-500">
                   {t.nav.comingSoon}
+                </span>
+              )}
+              {l.beta && (
+                <span className="rounded-full bg-amber-100 px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wide text-amber-700">
+                  {t.nav.beta}
                 </span>
               )}
             </a>
@@ -100,6 +110,11 @@ export default function Navbar() {
                 {l.comingSoon && (
                   <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-slate-500">
                     {t.nav.comingSoon}
+                  </span>
+                )}
+                {l.beta && (
+                  <span className="rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-amber-700">
+                    {t.nav.beta}
                   </span>
                 )}
               </a>

@@ -2,150 +2,130 @@
 
 Professionelle Website für **PrimaMax** – Reinigung, Haushaltshilfe, Nähservice und Hauswartsarbeiten in der Region Interlaken / Bödeli.
 
-Gebaut mit **Next.js (App Router)**, **Tailwind CSS** und einem KI-Preisrechner via **Anthropic Claude**.
+Gebaut mit **Next.js 14 (App Router)**, **Tailwind CSS**, KI-Funktionen via **Anthropic Claude** und Hosting auf **Vercel**.
 
-## Lokale Entwicklung
+---
+
+## Funktionen
+
+### Öffentliche Website (`/`)
+- Hero, Trust-Block, Services, Preise (mit Anfahrt-Regeln), FAQ, Kontakt mit Karte, Buchung
+- **Buchung**: Inquiry-only Modus bis 31.05.2026, danach automatisch Online-Direktbuchung mit 24h-Regel (kürzer = Telefon/WhatsApp-Fallback)
+- **KI-Preisrechner (Beta)**: kontextabhängig je Service (Reinigung / Haushalt / Nähservice)
+- **Zweisprachig** Deutsch / Englisch (Switcher in Navbar, persistiert in localStorage)
+- **Mobile Sticky-CTA-Bar** mit Call / WhatsApp / Anfragen
+- **SEO**: schema.org LocalBusiness + FAQ, dynamisches OG-Bild, Sitemap, Robots, Twitter-Cards, hreflang
+
+### Operator-Bereich (`/rechnung`)
+Passwort-geschützt (`INVOICE_PASSWORD`), Tabs:
+- **Rechnungen**: Chat-basierter Rechnungsassistent (Claude) mit Live-Vorschau, PDF-Druck, Mailto, automatischer Nummerierung (`PM-YYYY-NNN`)
+- **Kalender**: Monatsansicht, Termine erfassen / bearbeiten / löschen, lokal gespeichert (localStorage)
+
+### Rechtliches
+- `/impressum` – Anbieterkennzeichnung (Schweizer DSG-konform)
+- `/datenschutz` – Datenschutzerklärung mit allen Drittdiensten
+
+---
+
+## Setup
+
+### Lokal entwickeln
 
 ```bash
 npm install
-cp .env.example .env.local
-# In .env.local den ANTHROPIC_API_KEY eintragen
+cp .env.example .env.local   # und Werte eintragen
 npm run dev
 ```
 
-Die Seite läuft anschliessend auf [http://localhost:3000](http://localhost:3000).
+Aufrufen: <http://localhost:3000>
 
-### Build & Start (Produktion)
+### Environment Variables
 
-```bash
-npm run build
-npm start
-```
+In Vercel unter **Settings → Environment Variables** für **Production** setzen:
 
-## Deployment auf Vercel
+| Variable | Beschreibung | Beispiel |
+|---|---|---|
+| `ANTHROPIC_API_KEY` | API-Key für Claude (Preisrechner + Rechnungsassistent) | `sk-ant-...` |
+| `INVOICE_PASSWORD` | Passwort für `/rechnung` (12 Zeichen empfohlen) | `rfVoJLxNZhOi` |
+| `COMPANY_PHONE` | Telefon für Rechnungen | `+41 79 123 45 67` |
+| `COMPANY_IBAN` | IBAN für Rechnungen | `CH00 0000 0000 0000 0000 0` |
+| `COMPANY_TWINT` | Twint-Telefonnummer für Direktzahlung (optional) | `+41 79 123 45 67` |
+| `MWST_EXEMPT` | Hinweis auf MWST-Befreiung anzeigen | `true` |
 
-1. Repository auf [Vercel](https://vercel.com/new) importieren.
-2. Framework Preset: **Next.js** (wird automatisch erkannt). Die mitgelieferte `vercel.json` setzt `framework: "nextjs"` zusätzlich explizit.
+### Manuell zu setzende Werte im Code
 
-> **Falls der Build mit `No Output Directory named "public" found` fehlschlägt:**
-> Vercel-Projekt-Einstellungen öffnen → **Settings → Build & Development Settings** →
-> **Framework Preset** auf "Next.js" stellen und ggf. den manuell gesetzten
-> "Output Directory"-Override entfernen (leer lassen). Anschliessend neu deployen.
-3. **Environment Variable** hinzufügen:
-   - **Settings → Environment Variables**
-   - Name: `ANTHROPIC_API_KEY`
-   - Value: Ihr API-Key (siehe [console.anthropic.com](https://console.anthropic.com/))
-   - Environment: **Production**, **Preview** und **Development** auswählen.
-4. **Deploy** klicken.
+Bevor live: in den folgenden Dateien Platzhalter ersetzen:
 
-Bei Änderung der Variable muss das Projekt einmalig neu deployt werden, damit der neue Wert übernommen wird.
+- `app/components/WhatsAppButton.tsx`: `WHATSAPP_PHONE_PLACEHOLDER` → echte Telefonnummer
+- `app/components/Contact.tsx`: `FORMSPREE_ENDPOINT` → echte Formspree-URL
+- `app/components/Booking.tsx`: `FORMSPREE_ENDPOINT` → echte Formspree-URL
 
-### Eigene Domain anbinden
+---
 
-1. In Vercel: **Project → Settings → Domains → Add**.
-2. Wunschdomain (z.B. `primamax.ch`) eingeben.
-3. Den von Vercel angezeigten DNS-Eintrag (`A` oder `CNAME`) beim Domain-Provider hinterlegen.
-4. Vercel verifiziert die Domain automatisch und stellt ein SSL-Zertifikat bereit.
+## Domain & Deployment
 
-## Konfiguration
+- **Domain**: `primamax.ch` (verbunden via Vercel)
+- **Auto-Deploy**: jeder Push auf `main` deployt automatisch
+- **HTTPS** + Vercel CDN aktiv
+- **Vercel Analytics + Speed Insights**: aktiviert (kein Cookie-Banner nötig)
 
-### KI-Preisrechner
+### Vor Go-Live Checkliste
+- [ ] Auto Renewal der Domain einschalten (Vercel → Domains)
+- [ ] `www.primamax.ch` → Redirect auf `primamax.ch` einrichten
+- [ ] Alle Env Vars in Vercel gesetzt
+- [ ] Telefonnummer in `WhatsAppButton.tsx` eingetragen
+- [ ] Formspree-Endpoint eingetragen
+- [ ] Google Search Console: Domain hinzufügen, Sitemap einreichen
+- [ ] Google Business Profile anlegen (lokales SEO)
 
-- API-Route: `app/api/estimate/route.ts`
-- Modell: `claude-sonnet-4-20250514`
-- Der API-Key wird ausschliesslich serverseitig über `process.env.ANTHROPIC_API_KEY` gelesen und niemals ans Frontend ausgeliefert.
+---
 
-### Kontaktformular (Formspree)
+## Roadmap
 
-In `app/components/Contact.tsx`:
+### Phase 2 (Backend, geplant)
+- Supabase Backend mit Auth (zwei Operator-Konten)
+- DB-Schema: `inquiries`, `jobs`, `invoices`, `appointments`, `operators`
+- Anfragen-Inbox aller Web-Submissions im Operator-Bereich
+- Auftrags-Status-Workflow (Neu → Bestätigt → Erledigt → Verrechnet)
+- Geteilter Kalender (statt localStorage)
+- WhatsApp-Paste-and-Parse über Claude
 
-```ts
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/your-form-id";
-```
+### Phase 3 (später)
+- WhatsApp Business API Webhooks
+- Online-Direktbuchung mit Operator-freigegebenen Slots
+- Kundenkonten / Bestellhistorie
 
-Anleitung:
+---
 
-1. Auf [formspree.io](https://formspree.io/) ein kostenloses Konto anlegen.
-2. Ein neues Formular erstellen und die Endpoint-URL kopieren (Format: `https://formspree.io/f/abcdwxyz`).
-3. Diese URL in `Contact.tsx` ersetzen und committen.
-4. Im Formspree-Dashboard die Empfänger-E-Mail (z.B. `info@primamax.ch`) bestätigen.
+## Tech-Stack
 
-### WhatsApp-Nummer
+- **Framework**: Next.js 14.2 (App Router, RSC)
+- **Styling**: Tailwind CSS 3.4
+- **AI**: Anthropic SDK 0.32
+- **Hosting**: Vercel (Edge runtime für OG-Image)
+- **Analytics**: Vercel Analytics + Speed Insights
+- **Forms**: Formspree (vorerst, später Supabase)
 
-Platzhalter: `+41 XX XXX XX XX` (in `app/components/WhatsAppButton.tsx`, Konstante `WHATSAPP_PHONE_PLACEHOLDER`).
-
-Ersetzen Sie diese Konstante durch die echte Nummer im internationalen Format. Sie wird automatisch sowohl im Floating-Button, in der Kontaktbox als auch im Preisrechner verwendet.
-
-### Portrait-Fotos & Bio (Über uns)
-
-In `app/components/About.tsx` ist ein `// TODO`-Kommentar markiert. So ersetzen Sie die Platzhalter:
-
-1. Fotos in `public/images/` ablegen, z.B. `public/images/portrait-1.jpg` und `public/images/portrait-2.jpg`.
-2. Die beiden Platzhalter-Boxen mit `<img>`- oder Next.js `<Image>`-Tags ersetzen, z.B.:
-
-   ```tsx
-   import Image from "next/image";
-   <Image src="/images/portrait-1.jpg" alt="…" width={600} height={800} className="object-cover w-full h-full rounded-2xl" />
-   ```
-3. Den Beschreibungstext in der weissen Box durch Ihre persönliche Bio ersetzen.
-
-### Online-Buchung (Cal.com / Calendly)
-
-In `app/components/Booking.tsx` ist ein `// TODO`-Kommentar markiert. Beispiele:
-
-**Cal.com Inline Embed:**
-
-```bash
-npm install @calcom/embed-react
-```
-
-```tsx
-"use client";
-import Cal from "@calcom/embed-react";
-
-<Cal calLink="primamax/termin" style={{ width: "100%", height: "650px" }} />
-```
-
-**Calendly Inline Widget:**
-
-```tsx
-<div
-  className="calendly-inline-widget"
-  data-url="https://calendly.com/primamax/termin"
-  style={{ minWidth: 320, height: 700 }}
-/>
-<script src="https://assets.calendly.com/assets/external/widget.js" async />
-```
-
-Den bestehenden Coming-Soon-Block in `Booking.tsx` durch den Embed ersetzen.
-
-## Projektstruktur
+## Struktur
 
 ```
 app/
 ├── api/
-│   └── estimate/route.ts     # Server-side Anthropic API Route
-├── components/
-│   ├── Navbar.tsx
-│   ├── Hero.tsx
-│   ├── Services.tsx
-│   ├── About.tsx             # TODO: Foto- & Bio-Platzhalter
-│   ├── Pricing.tsx
-│   ├── PriceCalculator.tsx
-│   ├── Booking.tsx           # TODO: Cal.com/Calendly-Embed
-│   ├── Contact.tsx           # TODO: Formspree-Endpoint
-│   ├── Footer.tsx
-│   ├── WhatsAppButton.tsx
-│   └── RevealOnScroll.tsx
-├── globals.css
-├── layout.tsx
-└── page.tsx
+│   ├── estimate/        # KI-Preisrechner endpoint
+│   ├── invoice-agent/   # Rechnungs-Chat-Agent
+│   └── invoice-auth/    # Operator-Login
+├── components/          # React-Komponenten
+├── i18n/                # DE/EN Dictionary + Provider
+├── rechnung/            # Operator-Bereich (Rechnungen + Kalender)
+├── impressum/
+├── datenschutz/
+├── layout.tsx           # Root layout, Metadata, Analytics
+├── page.tsx             # Homepage
+├── opengraph-image.tsx  # Dynamisches OG-Bild
+├── sitemap.ts
+├── manifest.ts
+└── icon.svg             # Favicon
 ```
-
-## Sicherheit
-
-- Der Anthropic API-Key wird **niemals** im Browser ausgeliefert. Aufrufe laufen über die Server-Route `/api/estimate`.
-- Für produktive Nutzung empfiehlt sich zusätzlich Rate-Limiting (z.B. via Vercel Edge Middleware oder Upstash Ratelimit).
 
 ## Lizenz
 

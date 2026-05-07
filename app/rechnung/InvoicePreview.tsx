@@ -166,6 +166,18 @@ export default function InvoicePreview({ invoice, config }: Props) {
           <dt className="text-slate-500">Zahlungsreferenz:</dt>
           <dd>{invoice.invoice_number}</dd>
         </dl>
+        {config.twint && (
+          <div className="mt-3 flex items-center gap-2 rounded-md border border-primary-200 bg-white px-3 py-2 text-xs">
+            <span className="inline-flex items-center justify-center rounded bg-[#0a1929] px-1.5 py-0.5 text-[10px] font-bold text-white">
+              TWINT
+            </span>
+            <span className="text-slate-700">
+              Alternativ via Twint an{" "}
+              <span className="font-mono text-slate-900">{config.twint}</span>{" "}
+              (Zahlungsreferenz: {invoice.invoice_number})
+            </span>
+          </div>
+        )}
       </div>
 
       {invoice.notes && (

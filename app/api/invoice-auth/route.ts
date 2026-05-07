@@ -28,6 +28,7 @@ export async function POST(req: Request) {
     config: {
       phone: process.env.COMPANY_PHONE ?? "",
       iban: process.env.COMPANY_IBAN ?? "",
+      twint: process.env.COMPANY_TWINT ?? "",
       mwstExempt: process.env.MWST_EXEMPT === "true",
     },
   });

@@ -30,7 +30,7 @@ export default function WhatsAppButton({
         target="_blank"
         rel="noopener noreferrer"
         aria-label="WhatsApp – jetzt schreiben"
-        className="fixed bottom-5 right-5 z-50 inline-flex h-14 w-14 items-center justify-center rounded-full bg-whatsapp text-white shadow-lg ring-1 ring-black/5 hover:scale-105 transition"
+        className="fixed bottom-5 right-5 z-30 hidden h-14 w-14 items-center justify-center rounded-full bg-whatsapp text-white shadow-lg ring-1 ring-black/5 transition hover:scale-105 md:inline-flex"
       >
         <WhatsAppIcon />
       </a>
