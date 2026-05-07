@@ -1,6 +1,7 @@
 "use client";
 
 import { useLang } from "../i18n/LanguageProvider";
+import { IMAGES } from "../lib/images";
 import {
   WHATSAPP_PHONE_PLACEHOLDER,
   buildWhatsAppLink,
@@ -15,12 +16,26 @@ export default function Hero() {
       ? "Hallo PrimaMax, ich hätte eine Anfrage."
       : "Hello PrimaMax, I have a request."
   );
+  const heroImage = IMAGES.hero;
   return (
     <section
       id="top"
       className="relative isolate overflow-hidden pt-28 sm:pt-32 lg:pt-40 pb-16 sm:pb-20"
     >
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-primary-50 via-white to-white" />
+      {heroImage ? (
+        <>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={heroImage}
+            alt=""
+            aria-hidden
+            className="absolute inset-0 -z-20 h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white/85 via-white/70 to-white" />
+        </>
+      ) : (
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-primary-50 via-white to-white" />
+      )}
       <div className="absolute -top-32 -right-32 -z-10 h-[28rem] w-[28rem] rounded-full bg-primary-200/40 blur-3xl" />
       <div className="absolute -bottom-40 -left-32 -z-10 h-[28rem] w-[28rem] rounded-full bg-alpine-200/40 blur-3xl" />
 

@@ -1,8 +1,17 @@
 "use client";
 
 import { useLang } from "../i18n/LanguageProvider";
+import { IMAGES } from "../lib/images";
 
 const EMOJIS = ["🧽", "🏠", "🧺", "🪡", "🌱"];
+
+const SERVICE_IMAGE_KEYS: (keyof typeof IMAGES.services | null)[] = [
+  "cleaning",
+  "airbnb",
+  "household",
+  "sewingBasic",
+  "sewingOutdoor",
+];
 
 export default function Services() {
   const { t, lang } = useLang();
@@ -17,8 +26,21 @@ export default function Services() {
         </div>
 
         <div className="mt-12 grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-          {services.map((s, idx) => (
-            <article key={s.title} className="reveal card flex h-full flex-col">
+          {services.map((s, idx) => {
+            const imageKey = SERVICE_IMAGE_KEYS[idx];
+            const imageSrc = imageKey ? IMAGES.services[imageKey] : null;
+            return (
+            <article key={s.title} className="reveal card flex h-full flex-col overflow-hidden p-0">
+              {imageSrc && (
+                /* eslint-disable-next-line @next/next/no-img-element */
+                <img
+                  src={imageSrc}
+                  alt={s.title}
+                  loading="lazy"
+                  className="h-36 w-full object-cover sm:h-40"
+                />
+              )}
+              <div className="flex h-full flex-col p-6">
               <div className="flex items-start justify-between">
                 <div className="text-4xl">{EMOJIS[idx] ?? "✨"}</div>
                 {"comingSoon" in s && s.comingSoon && (
@@ -45,8 +67,10 @@ export default function Services() {
               >
                 {ctaLabel}
               </a>
+              </div>
             </article>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
