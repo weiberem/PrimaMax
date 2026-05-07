@@ -6,6 +6,7 @@ import Pricing from "./components/Pricing";
 import Contact from "./components/Contact";
 import FAQ from "./components/FAQ";
 import Booking from "./components/Booking";
+import Gallery from "./components/Gallery";
 import PriceCalculator from "./components/PriceCalculator";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
@@ -20,6 +21,7 @@ export default function Home() {
         <Hero />
         <Trust />
         <Services />
+        <Gallery />
         <Pricing />
         <Contact />
         <FAQ />
