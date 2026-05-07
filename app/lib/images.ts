@@ -19,7 +19,7 @@ export type Images = {
 };
 
 export const IMAGES: Images = {
-  hero: null,
+  hero: "/images/backgrounds/IMG_2967.jpg",
   services: {
     cleaning: null,
     airbnb: null,

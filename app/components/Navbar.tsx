@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useLang } from "../i18n/LanguageProvider";
+import BrandMark from "./BrandMark";
 
 export default function Navbar() {
   const { t, lang, setLang } = useLang();
@@ -38,13 +39,8 @@ export default function Navbar() {
       }`}
     >
       <div className="container-x flex items-center justify-between py-3 sm:py-4">
-        <a href="#top" className="flex items-center gap-2">
-          <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-primary-600 text-white font-bold">
-            P
-          </span>
-          <span className="text-lg font-semibold tracking-tight text-primary-700">
-            PrimaMax
-          </span>
+        <a href="#top" className="flex h-10 items-center" aria-label="PrimaMax">
+          <BrandMark variant="light" className="h-9 sm:h-10" />
         </a>
 
         <nav className="hidden md:flex items-center gap-5">

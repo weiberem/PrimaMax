@@ -1,6 +1,7 @@
 "use client";
 
 import { useLang } from "../i18n/LanguageProvider";
+import BrandMark from "./BrandMark";
 
 export default function Footer() {
   const { t } = useLang();
@@ -9,13 +10,8 @@ export default function Footer() {
     <footer className="bg-primary-900 text-primary-50">
       <div className="container-x py-12 grid gap-10 md:grid-cols-3">
         <div>
-          <div className="flex items-center gap-2">
-            <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white text-primary-700 font-bold">
-              P
-            </span>
-            <span className="text-lg font-semibold tracking-tight">
-              PrimaMax
-            </span>
+          <div className="flex h-10 items-center">
+            <BrandMark variant="dark" className="h-10" />
           </div>
           <p className="mt-3 text-sm text-primary-100/90 max-w-sm">
             {t.footer.description}
