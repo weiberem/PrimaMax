@@ -461,7 +461,7 @@ export const de = {
       },
       {
         q: "Wie kann ich bezahlen?",
-        a: "Sie erhalten von uns eine Rechnung mit IBAN und QR-Rechnung zur Banküberweisung. Zahlungsfrist sind 30 Tage.",
+        a: "Bequem per Banküberweisung mit der Rechnung (IBAN + QR-Rechnung) oder direkt per Twint an unsere Geschäftsnummer. Zahlungsfrist sind 30 Tage.",
       },
     ],
   },
@@ -1044,7 +1044,7 @@ export const en: Dict = {
       },
       {
         q: "How can I pay?",
-        a: "You'll receive an invoice with IBAN and QR-bill for bank transfer. Payment term is 30 days.",
+        a: "Easily by bank transfer using the invoice (IBAN + QR-bill) or directly via Twint to our business number. Payment term is 30 days.",
       },
     ],
   },

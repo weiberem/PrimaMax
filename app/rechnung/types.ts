@@ -28,5 +28,6 @@ export type Invoice = {
 export type InvoiceConfig = {
   phone: string;
   iban: string;
+  twint: string;
   mwstExempt: boolean;
 };

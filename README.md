@@ -49,6 +49,7 @@ In Vercel unter **Settings → Environment Variables** für **Production** setze
 | `INVOICE_PASSWORD` | Passwort für `/rechnung` (12 Zeichen empfohlen) | `rfVoJLxNZhOi` |
 | `COMPANY_PHONE` | Telefon für Rechnungen | `+41 79 123 45 67` |
 | `COMPANY_IBAN` | IBAN für Rechnungen | `CH00 0000 0000 0000 0000 0` |
+| `COMPANY_TWINT` | Twint-Telefonnummer für Direktzahlung (optional) | `+41 79 123 45 67` |
 | `MWST_EXEMPT` | Hinweis auf MWST-Befreiung anzeigen | `true` |
 
 ### Manuell zu setzende Werte im Code

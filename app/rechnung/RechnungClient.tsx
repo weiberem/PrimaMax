@@ -14,6 +14,7 @@ export default function RechnungClient() {
   const [config, setConfig] = useState<InvoiceConfig>({
     phone: "",
     iban: "",
+    twint: "",
     mwstExempt: false,
   });
 
