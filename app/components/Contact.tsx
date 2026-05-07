@@ -1,8 +1,18 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import dynamic from "next/dynamic";
 import WhatsAppButton, { WHATSAPP_PHONE_PLACEHOLDER } from "./WhatsAppButton";
 import { useLang } from "../i18n/LanguageProvider";
+
+const ServiceAreaMap = dynamic(() => import("./ServiceAreaMap"), {
+  ssr: false,
+  loading: () => (
+    <div className="flex aspect-[4/3] w-full items-center justify-center bg-slate-50 text-sm text-slate-500">
+      Karte wird geladen …
+    </div>
+  ),
+});
 
 // TODO: Replace with your real Formspree endpoint, e.g. https://formspree.io/f/abcdwxyz
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/your-form-id";
@@ -264,14 +274,11 @@ export default function Contact() {
                   {t.contact.mapOpenInGoogle} ↗
                 </a>
               </div>
-              <iframe
-                title={t.contact.mapTitle}
-                src="https://www.google.com/maps?q=Aenderbergstrasse+19,+3800+Matten+bei+Interlaken&z=15&output=embed"
-                className="aspect-[4/3] w-full border-0"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                allowFullScreen
-              />
+              <ServiceAreaMap />
+              <div className="border-t border-slate-100 px-4 py-2 text-xs text-slate-500">
+                <span className="mr-1 inline-block h-2 w-2 rounded-sm bg-primary-500/30 ring-1 ring-primary-500" />
+                Eingezeichnet: unser Einsatzgebiet im Bödeli
+              </div>
             </div>
           </aside>
         </div>
