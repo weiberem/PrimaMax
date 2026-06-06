@@ -523,66 +523,118 @@ export const de = {
   legal: {
     impressumTitle: "Impressum",
     providerLabel: "Anbieter",
+    providerBody: [
+      "PrimaMax",
+      "Reinigung · Haushaltshilfe · Nähservice",
+      "Aenderbergstrasse 19",
+      "3800 Matten bei Interlaken",
+      "Schweiz",
+    ],
+    legalFormLabel: "Rechtsform",
+    legalFormBody:
+      "Einzelunternehmen. UID-Nummer wird nach Eintrag im Schweizer Handelsregister ergänzt.",
+    vatLabel: "Mehrwertsteuer",
+    vatBody:
+      "Nicht mehrwertsteuerpflichtig nach Art. 10 MWSTG (Jahresumsatz unter CHF 100'000). Auf Rechnungen wird daher keine MWST ausgewiesen.",
     contactLabel: "Kontakt",
     responsibleLabel: "Verantwortlich für den Inhalt",
     responsibleBody:
-      "Die Inhaberinnen / Inhaber von PrimaMax sind verantwortlich für den Inhalt dieser Website.",
+      "Die Inhaberinnen / Inhaber von PrimaMax (Namen werden nach Bedarf ergänzt) sind für die Inhalte dieser Website verantwortlich.",
     disclaimerLabel: "Haftungsausschluss",
     disclaimerBody:
-      "Die Inhalte dieser Website werden mit grösster Sorgfalt erstellt. Für Richtigkeit, Vollständigkeit und Aktualität der Informationen kann jedoch keine Gewähr übernommen werden. Haftungsansprüche gegen die Betreiber für Schäden materieller oder ideeller Art, die durch die Nutzung der Website entstehen, sind ausgeschlossen, sofern kein vorsätzliches oder grob fahrlässiges Verschulden vorliegt.",
+      "Die Inhalte dieser Website werden mit grösster Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Informationen wird keine Gewähr übernommen. Insbesondere bei Preisangaben, dem KI-Preisrechner und Verfügbarkeiten handelt es sich um unverbindliche Schätzungen. Verbindliche Auskünfte erteilen wir gerne persönlich. Haftungsansprüche gegen die Betreiber für Schäden materieller oder ideeller Art, die aus der Nutzung dieser Website entstehen, sind ausgeschlossen, sofern kein vorsätzliches oder grob fahrlässiges Verschulden vorliegt.",
+    linkDisclaimerLabel: "Verweise und Links",
+    linkDisclaimerBody:
+      "Verweise und Links auf Webseiten Dritter (z.B. Formspree, OpenStreetMap, WhatsApp) liegen ausserhalb unseres Verantwortungsbereichs. Für deren Inhalt und Datenschutzpraxis ist ausschliesslich der jeweilige Betreiber verantwortlich.",
     copyrightLabel: "Urheberrecht",
     copyrightBody:
-      "Alle Inhalte (Texte, Bilder, Grafiken) auf dieser Website sind urheberrechtlich geschützt. Eine Vervielfältigung oder Verwendung in anderen Medien ohne ausdrückliche Zustimmung nicht gestattet.",
+      "Alle Inhalte dieser Website (Texte, Logos, Bilder, Grafiken, Layout) sind urheberrechtlich geschützt. Vervielfältigung, Bearbeitung oder Verwendung in anderen Medien bedürfen der ausdrücklichen schriftlichen Zustimmung von PrimaMax.",
+    applicableLawLabel: "Anwendbares Recht und Gerichtsstand",
+    applicableLawBody:
+      "Diese Website und sämtliche Rechtsbeziehungen mit PrimaMax unterstehen schweizerischem Recht unter Ausschluss kollisionsrechtlicher Bestimmungen. Gerichtsstand ist – soweit gesetzlich zulässig – Interlaken (Kanton Bern).",
+    lastUpdatedLabel: "Stand",
+    lastUpdatedValue: "07.05.2026",
     privacyTitle: "Datenschutzerklärung",
     privacyLastUpdated: "Stand",
     privacySections: [
       {
-        title: "Allgemeines",
+        title: "1. Verantwortliche Stelle",
         body: [
-          'PrimaMax (nachfolgend „wir") nimmt den Schutz Ihrer persönlichen Daten ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend dem schweizerischen Datenschutzgesetz (DSG) sowie – soweit anwendbar – der EU-Datenschutz-Grundverordnung (DSGVO).',
-          "Diese Erklärung beschreibt, welche Daten wir auf dieser Website erheben und wie wir sie verwenden.",
+          "Verantwortlich für die Datenbearbeitung auf dieser Website ist:",
+          "PrimaMax, Aenderbergstrasse 19, 3800 Matten bei Interlaken, Schweiz.",
+          "Telefon / WhatsApp: +41 77 973 20 71 · E-Mail: info@primamax.ch",
         ],
       },
       {
-        title: "Kontaktformular und Buchungsanfragen",
+        title: "2. Grundsätze",
         body: [
-          "Wenn Sie uns über das Kontakt- oder Buchungsformular eine Anfrage senden, werden Ihre Angaben (Name, Kontaktdaten, Inhalt der Anfrage) zum Zweck der Bearbeitung Ihrer Anfrage gespeichert. Diese Daten werden nicht ohne Ihre Einwilligung weitergegeben.",
-          "Die Übermittlung dieser Formulare erfolgt aktuell über den Dienstleister Formspree (Formspree, Inc., USA). Formspree leitet die Nachricht an unsere E-Mail-Adresse weiter.",
+          'PrimaMax (nachfolgend „wir") nimmt den Schutz Ihrer persönlichen Daten ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend dem revidierten schweizerischen Datenschutzgesetz (revDSG) sowie – soweit anwendbar – der EU-Datenschutz-Grundverordnung (DSGVO).',
+          "Wir erheben nur die Daten, die für die Bearbeitung Ihrer Anfrage und die Erbringung unserer Dienstleistungen erforderlich sind. Eine Weitergabe an Dritte erfolgt nur, wenn dies für die Vertragserfüllung notwendig oder gesetzlich vorgeschrieben ist.",
         ],
       },
       {
-        title: "KI-Preisrechner und Rechnungsassistent",
+        title: "3. Kontaktaufnahme (Formulare, E-Mail, Telefon, WhatsApp)",
         body: [
-          "Beim Einsatz des KI-Preisrechners werden Ihre Eingaben an die Anthropic-API (Anthropic, USA) übermittelt, um eine Schätzung zu erzeugen. Es findet kein dauerhaftes Speichern dieser Eingaben durch uns statt; es gelten die Datenschutzbestimmungen von Anthropic.",
+          "Wenn Sie uns über das Kontakt- oder Buchungsformular eine Anfrage senden, verarbeiten wir Ihre Angaben (Name, Telefon, E-Mail, Adresse, Inhalt der Anfrage, gewünschter Termin) zum Zweck der Bearbeitung Ihrer Anfrage. Die Übermittlung der Formulare erfolgt über den Dienstleister Formspree (Formspree, Inc., USA), der die Nachricht an unsere E-Mail-Adresse weiterleitet.",
+          "Bei Kontakt per Telefon, WhatsApp oder direkter E-Mail werden Ihre Nachrichten von uns persönlich bearbeitet und gegebenenfalls zur Auftragsabwicklung aufbewahrt. Für WhatsApp gelten zusätzlich die Datenschutzbestimmungen der Meta Platforms Ireland Ltd.",
+          "Aufbewahrungsdauer: Anfragen ohne Auftrag werden nach 12 Monaten gelöscht. Auftragsbezogene Daten werden bis zum Ablauf der gesetzlichen Aufbewahrungsfrist (10 Jahre nach OR) aufbewahrt.",
         ],
       },
       {
-        title: "Hosting (Vercel)",
+        title: "4. KI-Preisrechner und Rechnungsassistent",
         body: [
-          "Diese Website wird auf der Plattform Vercel (Vercel Inc., USA) gehostet. Beim Aufruf werden Server-Logdaten (z.B. IP-Adresse, Datum, abgerufene URL, Browsertyp) verarbeitet, soweit dies für den sicheren Betrieb der Website erforderlich ist.",
+          "Bei Verwendung des KI-Preisrechners werden Ihre Eingaben (Beschreibung des Auftrags, Fläche, Räume etc.) an die Anthropic-API (Anthropic, USA) übermittelt, um eine unverbindliche Preisspanne zu generieren. Wir speichern diese Eingaben nicht dauerhaft.",
+          "Der Rechnungsassistent im internen Bereich ist passwortgeschützt und nur für PrimaMax-Mitarbeitende zugänglich. Kundendaten in Rechnungen werden gemäss schweizerischem Obligationenrecht 10 Jahre aufbewahrt.",
         ],
       },
       {
-        title: "Eingebundene Karte (Google Maps)",
+        title: "5. Hosting (Vercel)",
         body: [
-          "Auf der Kontaktseite ist eine Karte von Google Maps eingebunden. Beim Laden der Karte werden Daten (u.a. Ihre IP-Adresse) an Google übertragen. Mehr dazu in den Datenschutzbestimmungen von Google.",
+          "Diese Website wird auf der Plattform Vercel (Vercel Inc., USA) gehostet. Beim Aufruf werden Server-Logdaten (IP-Adresse, Datum, abgerufene URL, Browsertyp, Referrer) verarbeitet, soweit dies für den sicheren Betrieb erforderlich ist. Logdaten werden nach 30 Tagen gelöscht oder anonymisiert.",
         ],
       },
       {
-        title: "Analyse",
+        title: "6. Eingebundene Karte (OpenStreetMap)",
         body: [
-          "Wir setzen ein datenschutzfreundliches Analysewerkzeug von Vercel (Vercel Web Analytics) ein, das ohne Cookies und ohne Erfassung persönlich identifizierender Informationen funktioniert. Es werden lediglich aggregierte Statistiken zu Seitenaufrufen erfasst.",
+          "Auf der Kontaktseite verwenden wir eine selbst gehostete Karte mit Kartendaten von OpenStreetMap (OSM Foundation, Vereinigtes Königreich). Beim Laden der Kartenkacheln wird Ihre IP-Adresse an die OpenStreetMap-Server übermittelt. Wir verwenden bewusst OpenStreetMap statt Google Maps, um den Datentransfer zu minimieren.",
         ],
       },
       {
-        title: "Ihre Rechte",
+        title: "7. Webanalyse (Vercel Analytics)",
         body: [
-          "Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung Ihrer Daten. Wenden Sie sich dazu an die untenstehende Kontaktadresse.",
+          "Wir setzen Vercel Web Analytics ein – ein datenschutzfreundliches Analysewerkzeug, das ohne Cookies und ohne Speicherung personenbezogener Identifikatoren arbeitet. Es werden ausschliesslich aggregierte Statistiken (Seitenaufrufe, Geräteklasse, Länderkennzeichen) erfasst. Eine Wiedererkennung einzelner Besucher findet nicht statt.",
+          "Zusätzlich nutzen wir Vercel Speed Insights zur Messung der Ladegeschwindigkeit (Core Web Vitals). Auch hier werden keine personenbezogenen Daten gespeichert.",
+        ],
+      },
+      {
+        title: "8. Zahlungsabwicklung",
+        body: [
+          "Rechnungen werden ausschliesslich per Banküberweisung (IBAN / QR-Rechnung) oder Twint abgewickelt. Es findet keine Bezahlung über diese Website statt. Bei der Zahlung gelten die Datenschutzbestimmungen Ihrer Bank bzw. der Twint AG.",
+        ],
+      },
+      {
+        title: "9. Cookies",
+        body: [
+          "Diese Website setzt keine Tracking- oder Werbe-Cookies. Wir verwenden ausschliesslich technisch notwendige lokale Speicher (localStorage) – beispielsweise um Ihre Sprachwahl (DE/EN) zu merken. Diese Daten verbleiben in Ihrem Browser und werden nicht an uns übertragen.",
+        ],
+      },
+      {
+        title: "10. Ihre Rechte",
+        body: [
+          "Sie haben das Recht auf Auskunft über Ihre gespeicherten Daten, deren Berichtigung, Löschung oder Einschränkung der Verarbeitung sowie das Recht auf Datenübertragbarkeit. Sie können eine erteilte Einwilligung jederzeit widerrufen. Beschwerden können Sie beim Eidgenössischen Datenschutz- und Öffentlichkeitsbeauftragten (EDÖB) einreichen.",
+          "Zur Ausübung Ihrer Rechte genügt eine formlose Mitteilung an die unten genannte Kontaktadresse.",
+        ],
+      },
+      {
+        title: "11. Anpassung dieser Datenschutzerklärung",
+        body: [
+          "Wir behalten uns vor, diese Datenschutzerklärung jederzeit anzupassen, um sie an geänderte rechtliche oder technische Bedingungen anzupassen. Es gilt jeweils die aktuelle, auf dieser Website veröffentlichte Fassung.",
         ],
       },
     ],
     privacyContactLabel: "Kontakt für Datenschutzfragen",
-    privacyContactBody: "Bei Fragen zum Datenschutz erreichen Sie uns unter:",
+    privacyContactBody:
+      "Bei Fragen oder Anliegen zum Datenschutz erreichen Sie uns telefonisch unter +41 77 973 20 71 oder per E-Mail an:",
   },
 };
 
@@ -1106,66 +1158,118 @@ export const en: Dict = {
   legal: {
     impressumTitle: "Imprint",
     providerLabel: "Provider",
+    providerBody: [
+      "PrimaMax",
+      "Cleaning · Household help · Sewing service",
+      "Aenderbergstrasse 19",
+      "3800 Matten bei Interlaken",
+      "Switzerland",
+    ],
+    legalFormLabel: "Legal form",
+    legalFormBody:
+      "Sole proprietorship. UID number will be added after entry in the Swiss commercial register.",
+    vatLabel: "Value-added tax (VAT)",
+    vatBody:
+      "Not subject to VAT under Art. 10 MWSTG (annual turnover below CHF 100,000). VAT is therefore not stated on invoices.",
     contactLabel: "Contact",
     responsibleLabel: "Responsible for content",
     responsibleBody:
-      "The owners of PrimaMax are responsible for the content of this website.",
+      "The owners of PrimaMax (names will be added as needed) are responsible for the content of this website.",
     disclaimerLabel: "Disclaimer",
     disclaimerBody:
-      "The content of this website is created with great care. However, no guarantee is given for the accuracy, completeness or timeliness of the information. Liability claims against the operators for damages of a material or immaterial nature arising from the use of the website are excluded, provided there is no intentional or grossly negligent fault.",
+      "The content of this website is created with great care. No guarantee is given for the accuracy, completeness or timeliness of the information. In particular, price information, the AI price calculator and availabilities are non-binding estimates. Binding information is provided personally on request. Liability claims against the operators for damages of a material or immaterial nature arising from the use of this website are excluded, provided there is no intentional or grossly negligent fault.",
+    linkDisclaimerLabel: "References and links",
+    linkDisclaimerBody:
+      "References and links to third-party websites (e.g. Formspree, OpenStreetMap, WhatsApp) are outside our area of responsibility. The respective operators are solely responsible for their content and data protection practices.",
     copyrightLabel: "Copyright",
     copyrightBody:
-      "All content (texts, images, graphics) on this website is protected by copyright. Reproduction or use in other media is not permitted without express consent.",
+      "All content on this website (texts, logos, images, graphics, layout) is protected by copyright. Reproduction, modification or use in other media requires the express written consent of PrimaMax.",
+    applicableLawLabel: "Applicable law and jurisdiction",
+    applicableLawBody:
+      "This website and all legal relationships with PrimaMax are subject to Swiss law, excluding conflict-of-laws provisions. The place of jurisdiction is – as far as legally permissible – Interlaken (Canton of Bern).",
+    lastUpdatedLabel: "Last updated",
+    lastUpdatedValue: "07.05.2026",
     privacyTitle: "Privacy policy",
     privacyLastUpdated: "Last updated",
     privacySections: [
       {
-        title: "General",
+        title: "1. Responsible entity",
         body: [
-          "PrimaMax (\"we\") takes the protection of your personal data seriously. We treat your personal data confidentially and in accordance with the Swiss Data Protection Act (DSG) and – where applicable – the EU General Data Protection Regulation (GDPR).",
-          "This statement describes what data we collect on this website and how we use it.",
+          "The entity responsible for data processing on this website is:",
+          "PrimaMax, Aenderbergstrasse 19, 3800 Matten bei Interlaken, Switzerland.",
+          "Phone / WhatsApp: +41 77 973 20 71 · Email: info@primamax.ch",
         ],
       },
       {
-        title: "Contact form and booking inquiries",
+        title: "2. Principles",
         body: [
-          "When you send us an inquiry via the contact or booking form, your details (name, contact details, content of the inquiry) are stored for the purpose of processing your request. This data is not passed on without your consent.",
-          "Submission of these forms is currently handled by the service provider Formspree (Formspree, Inc., USA). Formspree forwards the message to our email address.",
+          'PrimaMax ("we") takes the protection of your personal data seriously. We treat your personal data confidentially and in accordance with the revised Swiss Federal Act on Data Protection (revFADP) and – where applicable – the EU General Data Protection Regulation (GDPR).',
+          "We only collect the data required to process your inquiry and deliver our services. Data is only passed to third parties when necessary for contract fulfilment or required by law.",
         ],
       },
       {
-        title: "AI price calculator and invoice assistant",
+        title: "3. Contact (forms, email, phone, WhatsApp)",
         body: [
-          "When using the AI price calculator, your inputs are transmitted to the Anthropic API (Anthropic, USA) to generate an estimate. We do not permanently store these inputs; Anthropic's data protection regulations apply.",
+          "When you send an inquiry via the contact or booking form, we process your details (name, phone, email, address, content of the inquiry, preferred date) for the purpose of handling your request. Form submission is handled by Formspree (Formspree, Inc., USA), which forwards the message to our email address.",
+          "When you contact us by phone, WhatsApp or direct email, your messages are handled personally and, if needed, retained for order processing. For WhatsApp, the data protection terms of Meta Platforms Ireland Ltd. additionally apply.",
+          "Retention: inquiries without an order are deleted after 12 months. Order-related data is retained until the statutory retention period expires (10 years under Swiss CO).",
         ],
       },
       {
-        title: "Hosting (Vercel)",
+        title: "4. AI price calculator and invoice assistant",
         body: [
-          "This website is hosted on the Vercel platform (Vercel Inc., USA). When the site is accessed, server log data (e.g. IP address, date, accessed URL, browser type) is processed insofar as this is necessary for the secure operation of the website.",
+          "When using the AI price calculator, your inputs (job description, area, rooms etc.) are transmitted to the Anthropic API (Anthropic, USA) to generate a non-binding price range. We do not store these inputs permanently.",
+          "The invoice assistant in the internal area is password-protected and only accessible to PrimaMax staff. Customer data in invoices is retained for 10 years under the Swiss Code of Obligations.",
         ],
       },
       {
-        title: "Embedded map (Google Maps)",
+        title: "5. Hosting (Vercel)",
         body: [
-          "A Google Maps map is embedded on the contact page. When the map is loaded, data (including your IP address) is transmitted to Google. More information in Google's privacy policy.",
+          "This website is hosted on the Vercel platform (Vercel Inc., USA). When accessed, server log data (IP address, date, accessed URL, browser type, referrer) is processed insofar as this is necessary for secure operation. Log data is deleted or anonymised after 30 days.",
         ],
       },
       {
-        title: "Analytics",
+        title: "6. Embedded map (OpenStreetMap)",
         body: [
-          "We use a privacy-friendly analytics tool from Vercel (Vercel Web Analytics) that works without cookies and without recording personally identifiable information. Only aggregated statistics about page views are collected.",
+          "On the contact page we use a self-hosted map with map data from OpenStreetMap (OSM Foundation, United Kingdom). When the map tiles load, your IP address is transmitted to the OpenStreetMap servers. We deliberately use OpenStreetMap instead of Google Maps to minimise data transfer.",
         ],
       },
       {
-        title: "Your rights",
+        title: "7. Web analytics (Vercel Analytics)",
         body: [
-          "You have the right to information, correction, deletion and restriction of the processing of your data. To exercise these rights, please contact us using the contact address below.",
+          "We use Vercel Web Analytics – a privacy-friendly analytics tool that works without cookies and without storing personal identifiers. Only aggregated statistics (page views, device class, country code) are collected. Recognition of individual visitors does not take place.",
+          "Additionally we use Vercel Speed Insights to measure loading speed (Core Web Vitals). No personal data is stored here either.",
+        ],
+      },
+      {
+        title: "8. Payment processing",
+        body: [
+          "Invoices are settled exclusively by bank transfer (IBAN / QR-bill) or Twint. No payment takes place via this website. For payments, the data protection terms of your bank or Twint AG apply.",
+        ],
+      },
+      {
+        title: "9. Cookies",
+        body: [
+          "This website does not set tracking or advertising cookies. We use only technically necessary local storage (localStorage) – for example to remember your language choice (DE/EN). This data remains in your browser and is not transmitted to us.",
+        ],
+      },
+      {
+        title: "10. Your rights",
+        body: [
+          "You have the right to information about your stored data, its correction, deletion or restriction of processing, as well as the right to data portability. You may withdraw consent at any time. Complaints can be filed with the Swiss Federal Data Protection and Information Commissioner (FDPIC).",
+          "To exercise your rights, a simple informal message to the contact address below is sufficient.",
+        ],
+      },
+      {
+        title: "11. Changes to this privacy policy",
+        body: [
+          "We reserve the right to amend this privacy policy at any time to reflect changed legal or technical conditions. The current version published on this website applies.",
         ],
       },
     ],
     privacyContactLabel: "Contact for privacy questions",
-    privacyContactBody: "For questions about data protection, you can reach us at:",
+    privacyContactBody:
+      "For data protection questions or requests, you can reach us by phone at +41 77 973 20 71 or by email at:",
   },
 };
 

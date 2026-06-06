@@ -17,26 +17,25 @@ export default function ImpressumPage() {
         <h1 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
           {t.legal.impressumTitle}
         </h1>
+        <p className="mt-2 text-sm text-slate-500">
+          {t.legal.lastUpdatedLabel}: {t.legal.lastUpdatedValue}
+        </p>
 
-        <div className="mt-8 max-w-2xl space-y-6 text-slate-700">
-          <section>
-            <h2 className="text-base font-semibold uppercase tracking-wide text-slate-900">
-              {t.legal.providerLabel}
-            </h2>
-            <p className="mt-2 leading-relaxed">
-              PrimaMax<br />
-              Aenderbergstrasse 19<br />
-              3800 Matten bei Interlaken<br />
-              Schweiz
-            </p>
-          </section>
+        <div className="mt-8 max-w-2xl space-y-8 text-slate-700">
+          <Section title={t.legal.providerLabel}>
+            <address className="not-italic leading-relaxed">
+              {t.legal.providerBody.map((line, i) => (
+                <span key={i}>
+                  {line}
+                  <br />
+                </span>
+              ))}
+            </address>
+          </Section>
 
-          <section>
-            <h2 className="text-base font-semibold uppercase tracking-wide text-slate-900">
-              {t.legal.contactLabel}
-            </h2>
-            <p className="mt-2 leading-relaxed">
-              Telefon / WhatsApp:{" "}
+          <Section title={t.legal.contactLabel}>
+            <p className="leading-relaxed">
+              {lang === "de" ? "Telefon / WhatsApp" : "Phone / WhatsApp"}:{" "}
               <a
                 href="tel:+41779732071"
                 className="text-primary-700 hover:underline"
@@ -44,7 +43,7 @@ export default function ImpressumPage() {
                 +41 77 973 20 71
               </a>
               <br />
-              E-Mail:{" "}
+              {lang === "de" ? "E-Mail" : "Email"}:{" "}
               <a
                 href="mailto:info@primamax.ch"
                 className="text-primary-700 hover:underline"
@@ -52,7 +51,7 @@ export default function ImpressumPage() {
                 info@primamax.ch
               </a>
               <br />
-              Web:{" "}
+              {lang === "de" ? "Web" : "Web"}:{" "}
               <a
                 href="https://primamax.ch"
                 className="text-primary-700 hover:underline"
@@ -60,32 +59,54 @@ export default function ImpressumPage() {
                 primamax.ch
               </a>
             </p>
-          </section>
+          </Section>
 
-          <section>
-            <h2 className="text-base font-semibold uppercase tracking-wide text-slate-900">
-              {t.legal.responsibleLabel}
-            </h2>
-            <p className="mt-2 leading-relaxed">
-              {t.legal.responsibleBody}
-            </p>
-          </section>
+          <Section title={t.legal.legalFormLabel}>
+            <p className="leading-relaxed">{t.legal.legalFormBody}</p>
+          </Section>
 
-          <section>
-            <h2 className="text-base font-semibold uppercase tracking-wide text-slate-900">
-              {t.legal.disclaimerLabel}
-            </h2>
-            <p className="mt-2 leading-relaxed">{t.legal.disclaimerBody}</p>
-          </section>
+          <Section title={t.legal.vatLabel}>
+            <p className="leading-relaxed">{t.legal.vatBody}</p>
+          </Section>
 
-          <section>
-            <h2 className="text-base font-semibold uppercase tracking-wide text-slate-900">
-              {t.legal.copyrightLabel}
-            </h2>
-            <p className="mt-2 leading-relaxed">{t.legal.copyrightBody}</p>
-          </section>
+          <Section title={t.legal.responsibleLabel}>
+            <p className="leading-relaxed">{t.legal.responsibleBody}</p>
+          </Section>
+
+          <Section title={t.legal.disclaimerLabel}>
+            <p className="leading-relaxed">{t.legal.disclaimerBody}</p>
+          </Section>
+
+          <Section title={t.legal.linkDisclaimerLabel}>
+            <p className="leading-relaxed">{t.legal.linkDisclaimerBody}</p>
+          </Section>
+
+          <Section title={t.legal.copyrightLabel}>
+            <p className="leading-relaxed">{t.legal.copyrightBody}</p>
+          </Section>
+
+          <Section title={t.legal.applicableLawLabel}>
+            <p className="leading-relaxed">{t.legal.applicableLawBody}</p>
+          </Section>
         </div>
       </div>
     </main>
+  );
+}
+
+function Section({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <section>
+      <h2 className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+        {title}
+      </h2>
+      <div className="mt-2">{children}</div>
+    </section>
   );
 }
