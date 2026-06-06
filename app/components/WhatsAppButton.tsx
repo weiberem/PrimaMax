@@ -6,7 +6,7 @@ type Props = {
   floating?: boolean;
 };
 
-export const WHATSAPP_PHONE_PLACEHOLDER = "+41 XX XXX XX XX";
+export const WHATSAPP_PHONE_PLACEHOLDER = "+41 77 973 20 71";
 
 export function buildWhatsAppLink(phone: string, message?: string) {
   const cleaned = phone.replace(/[^\d]/g, "");
