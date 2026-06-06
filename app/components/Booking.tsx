@@ -81,7 +81,7 @@ export default function Booking() {
   const fmtDate = useMemo(() => {
     if (!date) return "";
     const d = new Date(`${date}T00:00:00`);
-    return d.toLocaleDateString(lang === "de" ? "de-CH" : "en-GB", {
+    return d.toLocaleDateString(lang === "de" ? "de-CH" : "en-CH", {
       weekday: "long",
       day: "2-digit",
       month: "long",

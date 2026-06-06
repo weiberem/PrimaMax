@@ -7,6 +7,7 @@ const businessJsonLd = {
     "Reinigung, Haushaltshilfe, Nähservice und Hauswartsarbeiten in der Region Interlaken / Bödeli – sorgfältig, lokal, persönlich.",
   url: "https://primamax.ch",
   logo: "https://primamax.ch/logo.svg",
+  inLanguage: ["de-CH", "en-CH"],
   image: "https://primamax.ch/opengraph-image",
   email: "info@primamax.ch",
   telephone: "+41779732071",
@@ -111,8 +112,10 @@ const businessJsonLd = {
     telephone: "+41779732071",
     email: "info@primamax.ch",
     areaServed: "CH",
-    availableLanguage: ["de", "en"],
+    availableLanguage: ["de-CH", "en-CH"],
   },
+  currenciesAccepted: "CHF",
+  paymentAccepted: "Bank transfer (IBAN/QR-bill), Twint",
   sameAs: [],
 };
 

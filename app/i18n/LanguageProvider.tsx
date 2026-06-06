@@ -47,7 +47,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
       /* ignore */
     }
     if (typeof document !== "undefined") {
-      document.documentElement.lang = lang === "de" ? "de-CH" : "en";
+      document.documentElement.lang = lang === "de" ? "de-CH" : "en-CH";
     }
   }, [lang, hydrated]);
 

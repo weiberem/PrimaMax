@@ -38,7 +38,8 @@ export const metadata: Metadata = {
     canonical: "https://primamax.ch",
     languages: {
       "de-CH": "https://primamax.ch",
-      en: "https://primamax.ch",
+      "en-CH": "https://primamax.ch",
+      "x-default": "https://primamax.ch",
     },
   },
   openGraph: {
@@ -48,7 +49,8 @@ export const metadata: Metadata = {
     url: "https://primamax.ch",
     siteName: "PrimaMax",
     locale: "de_CH",
-    alternateLocale: "en_US",
+    alternateLocale: "en_CH",
+    countryName: "Switzerland",
     type: "website",
   },
   twitter: {
