@@ -36,6 +36,14 @@ export default function ImpressumPage() {
               {t.legal.contactLabel}
             </h2>
             <p className="mt-2 leading-relaxed">
+              Telefon / WhatsApp:{" "}
+              <a
+                href="tel:+41779732071"
+                className="text-primary-700 hover:underline"
+              >
+                +41 77 973 20 71
+              </a>
+              <br />
               E-Mail:{" "}
               <a
                 href="mailto:info@primamax.ch"

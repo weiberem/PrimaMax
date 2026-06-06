@@ -9,6 +9,7 @@ const businessJsonLd = {
   logo: "https://primamax.ch/logo.svg",
   image: "https://primamax.ch/opengraph-image",
   email: "info@primamax.ch",
+  telephone: "+41779732071",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Aenderbergstrasse 19",
@@ -107,6 +108,7 @@ const businessJsonLd = {
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "customer service",
+    telephone: "+41779732071",
     email: "info@primamax.ch",
     areaServed: "CH",
     availableLanguage: ["de", "en"],

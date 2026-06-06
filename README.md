@@ -56,7 +56,7 @@ In Vercel unter **Settings → Environment Variables** für **Production** setze
 
 Bevor live: in den folgenden Dateien Platzhalter ersetzen:
 
-- `app/components/WhatsAppButton.tsx`: `WHATSAPP_PHONE_PLACEHOLDER` → echte Telefonnummer
+- `app/components/WhatsAppButton.tsx`: `WHATSAPP_PHONE_PLACEHOLDER` → `+41 77 973 20 71` (PrimaMax-Nummer, WA Business)
 - `app/components/Contact.tsx`: `FORMSPREE_ENDPOINT` → echte Formspree-URL
 - `app/components/Booking.tsx`: `FORMSPREE_ENDPOINT` → echte Formspree-URL
 
@@ -73,7 +73,7 @@ Bevor live: in den folgenden Dateien Platzhalter ersetzen:
 - [ ] Auto Renewal der Domain einschalten (Vercel → Domains)
 - [ ] `www.primamax.ch` → Redirect auf `primamax.ch` einrichten
 - [ ] Alle Env Vars in Vercel gesetzt
-- [ ] Telefonnummer in `WhatsAppButton.tsx` eingetragen
+- [x] Telefonnummer in `WhatsAppButton.tsx` eingetragen (`+41 77 973 20 71`)
 - [ ] Formspree-Endpoint eingetragen
 - [ ] Google Search Console: Domain hinzufügen, Sitemap einreichen
 - [ ] Google Business Profile anlegen (lokales SEO)

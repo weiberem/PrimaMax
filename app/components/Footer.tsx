@@ -60,6 +60,11 @@ export default function Footer() {
             PrimaMax<br />
             Aenderbergstrasse 19<br />
             3800 Matten bei Interlaken<br />
+            Tel / WhatsApp:{" "}
+            <a href="tel:+41779732071" className="hover:text-white">
+              +41 77 973 20 71
+            </a>
+            <br />
             E-Mail:{" "}
             <a
               href="mailto:info@primamax.ch"
