@@ -69,6 +69,12 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_VERIFY,
+    other: {
+      "msvalidate.01": process.env.NEXT_PUBLIC_BING_VERIFY ?? "",
+    },
+  },
   manifest: "/manifest.webmanifest",
   formatDetection: { telephone: true, email: true, address: true },
 };
