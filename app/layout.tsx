@@ -4,6 +4,7 @@ import { LanguageProvider } from "./i18n/LanguageProvider";
 import StructuredData from "./components/StructuredData";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { GoogleTagManager } from "./components/Analytics";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://primamax.ch"),
@@ -103,6 +104,7 @@ export default function RootLayout({
         <LanguageProvider>{children}</LanguageProvider>
         <Analytics />
         <SpeedInsights />
+        <GoogleTagManager />
       </body>
     </html>
   );

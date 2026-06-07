@@ -44,6 +44,21 @@ export default function Footer() {
               </a>
             </li>
             <li>
+              <a href="/blog" className="hover:text-white">
+                Tipps & Wissen
+              </a>
+            </li>
+            <li>
+              <a href="/reinigung/interlaken" className="hover:text-white">
+                Reinigung Interlaken
+              </a>
+            </li>
+            <li>
+              <a href="/reinigung/matten" className="hover:text-white">
+                Reinigung Matten
+              </a>
+            </li>
+            <li>
               <a href="#calculator" className="hover:text-white">
                 {t.nav.calculator}
               </a>
